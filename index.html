@@ -295,6 +295,18 @@
       .features, .steps, .app-layout { grid-template-columns: 1fr; }
       .cta-box { padding: 28px; }
     }
+  
+  
+    .process-demo { padding: 82px 0; }
+    .process-frame {
+      overflow: hidden;
+      border: 1px solid var(--line);
+      border-radius: 24px;
+      background: white;
+      box-shadow: var(--shadow);
+    }
+    .process-frame img { display: block; width: 100%; height: auto; }
+    .process-note { margin-top: 14px; color: #738198; font-size: 13px; text-align: center; }
   </style>
 </head>
 <body>
@@ -304,6 +316,7 @@
         <img src="assets/filepackr-logo.png" alt="filepackR logo" />
       </a>
       <div class="nav-links">
+        <a href="#demo">Demo</a>
         <a href="#features">Features</a>
         <a href="#workflow">Workflow</a>
         <a href="#value">Value</a>
@@ -350,8 +363,8 @@
                 <div class="file-row"><span class="file-icon"></span><span>Authorization Forms</span><span class="pill">Ready</span></div>
 		<div class="file-row"><span class="file-icon"></span><span>Signed Documents</span><span class="pill">Ready</span></div>
 		<div class="file-row"><span class="file-icon"></span><span>Legal Documents</span><span class="pill">Ready</span></div>
-		<div class="file-row"><span class="file-icon"></span><span>Team Collaberation</span><span class="pill">Ready</span></div>
-		<div class="file-row"><span class="file-icon"></span><span>Case Summary/span><span class="pill">Ready</span></div>
+		<div class="file-row"><span class="file-icon"></span><span>Team Collaboration</span><span class="pill">Ready</span></div>
+		<div class="file-row"><span class="file-icon"></span><span>Case Summary</span><span class="pill">Ready</span></div>
               </div>
               <div class="app-panel">
                 <h4>Processing status</h4>
@@ -379,6 +392,23 @@
           <span>✓ Personnel records</span>
           <span>✓ Document-heavy operations</span>
         </div>
+      </div>
+    </section>
+
+
+
+
+    <section class="process-demo" id="demo">
+      <div class="container">
+        <div class="section-head">
+          <span class="kicker">See the workflow</span>
+          <h2>One mixed packet in. Organized, audit-ready records out.</h2>
+          <p>filepackR combines OCR, configurable document rules, quality review, and folder auditing into a single repeatable process.</p>
+        </div>
+        <div class="process-frame">
+          <img src="assets/filepackr-process-animation.svg" alt="Animated filepackR workflow showing packet intake, OCR analysis, smart sorting, review, and audit-ready output" />
+        </div>
+        <p class="process-note">The animation loops automatically. No video player or third-party service is required.</p>
       </div>
     </section>
 

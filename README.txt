@@ -30,3 +30,21 @@ NOTES
 - No database, npm installation, or build step is required.
 - CSS and JavaScript are embedded in index.html.
 - The supplied logo has been cleaned and converted into transparent PNG files.
+
+
+PROCESS ANIMATION
+-----------------
+assets/filepackr-process-animation.svg
+animation-preview.html
+
+The animated SVG is embedded into index.html and loops automatically in modern web browsers.
+It is lightweight, scalable, and does not require a video player or external library.
+
+
+TEXT REVISION MERGE
+-------------------
+The user's revised wording has been merged into the prior animated landing page.
+The process animation and preview remain included.
+Two small pasted-text issues were cleaned:
+- Team Collaberation -> Team Collaboration
+- Missing closing span tag fixed for Case Summary

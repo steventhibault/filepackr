@@ -255,7 +255,7 @@
     .metric strong { display: block; font-size: 1.35rem; letter-spacing: -.04em; }
     .metric small { color: #748196; font-size: 10px; font-weight: 720; }
 
-    .trust { padding-bottom: 22px; }
+    .trust { padding-bottom: 18px; }
     .trust-box {
       display: flex;
       flex-wrap: wrap;
@@ -270,7 +270,7 @@
     .trust-box strong { font-size: 14px; }
     .trust-list { display: flex; flex-wrap: wrap; gap: 18px; color: #647289; font-size: 13px; font-weight: 780; }
 
-    .section { padding: 88px 0; }
+    .section { padding: 62px 0; }
     .section-alt { border-top: 1px solid #e9eff6; border-bottom: 1px solid #e9eff6; background: white; }
     .section-head { max-width: 790px; margin-bottom: 38px; }
     .kicker { color: var(--teal); font-size: 12px; font-weight: 900; letter-spacing: .13em; text-transform: uppercase; }
@@ -332,7 +332,7 @@
     .value-card p { margin: 0 0 22px; font-size: 1.35rem; line-height: 1.45; letter-spacing: -.025em; }
     .value-card small { color: #bdc9db; font-weight: 720; }
 
-    .cta { padding: 86px 0; }
+    .cta { padding: 62px 0; }
     .cta-box {
       display: flex;
       flex-wrap: wrap;
@@ -393,7 +393,7 @@
     }
   
   
-    .process-demo { padding: 34px 0 78px; }
+    .process-demo { padding: 30px 0 44px; }
     .process-frame {
       overflow: hidden;
       border: 1px solid var(--line);
@@ -499,6 +499,71 @@
       .form-actions .button { width: 100%; }
     }
 
+  
+    /* Compact icon-and-text layouts */
+    .features .feature {
+      min-height: 158px;
+      display: grid;
+      grid-template-columns: 40px 1fr;
+      column-gap: 14px;
+      align-content: start;
+      padding: 19px;
+    }
+    .features .feature-icon {
+      grid-row: 1 / span 2;
+      width: 40px;
+      height: 40px;
+      margin: 0;
+    }
+    .features .feature h3 { margin: 1px 0 7px; }
+    .features .feature p { margin: 0; }
+
+    .steps .step {
+      min-height: 156px;
+      display: grid;
+      grid-template-columns: 38px 1fr;
+      column-gap: 14px;
+      align-content: start;
+      padding: 20px;
+    }
+    .steps .step-number {
+      grid-row: 1 / span 2;
+      width: 38px;
+      height: 38px;
+      margin: 0;
+      border-radius: 11px;
+      font-size: .95rem;
+    }
+    .steps .step h3 { margin: 2px 0 7px; }
+    .steps .step p { margin: 0; }
+
+    .scale-item {
+      align-items: flex-start;
+      gap: 13px;
+      padding: 14px 15px;
+    }
+    .scale-item .check { margin-top: 1px; }
+
+    @media (max-width: 620px) {
+      .section { padding: 48px 0; }
+      .process-demo { padding: 24px 0 36px; }
+      .cta { padding: 48px 0; }
+
+      .features .feature,
+      .steps .step {
+        min-height: auto;
+        grid-template-columns: 38px 1fr;
+        column-gap: 12px;
+        padding: 17px;
+      }
+      .features .feature-icon,
+      .steps .step-number {
+        grid-row: 1 / span 2;
+        width: 38px;
+        height: 38px;
+      }
+    }
+
   </style>
 </head>
 <body>
@@ -533,8 +598,9 @@
           </div>
           <div class="proof">
             <span><i>✓</i> OCR-powered recognition</span>
-            <span><i>✓</i> Local-first processing</span>
+            <span><i>✓</i> Customizable routing</span>
             <span><i>✓</i> Flexible, scalable workflows</span>
+            <span><i>✓</i> Local-first security</span>
           </div>
         </div>
 
@@ -565,7 +631,7 @@
                 <div class="metrics">
                   <div class="metric"><strong>24</strong><small>Pages analyzed</small></div>
                   <div class="metric"><strong>9</strong><small>PDFs prepared</small></div>
-                  <div class="metric"><strong>1</strong><small>Needs review</small></div>
+                  <div class="metric"><strong>3</strong><small>Needs review</small></div>
                   <div class="metric"><strong>88%</strong><small>Complete</small></div>
                 </div>
               </div>
@@ -581,7 +647,7 @@
         <div class="trust-list">
           <span>✓ Onboarding</span>
           <span>✓ Compliance</span>
-          <span>✓ Personnel records</span>
+          <span>✓ Secure local processing</span>
           <span>✓ Document-heavy operations</span>
         </div>
       </div>
@@ -808,7 +874,6 @@
 <text x="82" y="562" class="small">Your staff focuses on exceptions, quality review, and the records that genuinely need attention.</text>
 </svg></div>
         </div>
-        <p class="process-note">The animation loops automatically. No video player or third-party service is required.</p>
       </div>
     </section>
 
@@ -1033,7 +1098,7 @@
         <div>
           <span class="kicker">Local-first security</span>
           <h2>Route files intelligently without giving up control of your records.</h2>
-          <p class="scale-copy">filepackR is designed for organizations that handle sensitive paperwork and want practical routing automation without routinely sending every document to a third-party cloud service.</p>
+          <p class="scale-copy">filepackR is designed for organizations that handle sensitive paperwork and want practical routing automation while reducing the risk of sending sensitive documents through unsecured cloud workflows.</p>
           <div class="scale-list">
             <div class="scale-item">
               <span class="check">✓</span>
@@ -1071,7 +1136,7 @@
     <div class="container footer-inner">
       <span>© <span id="year"></span> filepackR. All rights reserved.</span>
       <div class="footer-links">
-        <a href="mailto:hello@filepackr.com">Contact</a>
+        <a href="mailto:steve@stevethibault.com">Contact</a>
         <a href="#features">Features</a>
       </div>
     </div>

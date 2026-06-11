@@ -3,9 +3,88 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="filepackR transforms mixed document packets into organized, audit-ready records with OCR classification, intelligent file routing, quality checks, configurable rules, and scalable workflow automation." />
-  <title>filepackR | Intelligent Document Intake</title>
+  <meta name="description" content="filepackR is PDF document-processing software for splitting, merging, combining, organizing, and routing mixed PDF files. Use OCR-powered classification and customizable workflows to create cleaner, audit-ready records." />
+  <title>PDF Splitter, Merger and Document Processing Software | filepackR</title>
   <link rel="icon" type="image/svg+xml" href="assets/favicon.svg" />
+
+  <meta name="robots" content="index, follow, max-image-preview:large" />
+  <link rel="canonical" href="https://filepackr.com/" />
+
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://filepackr.com/" />
+  <meta property="og:title" content="PDF Splitter, Merger and Document Processing Software | filepackR" />
+  <meta property="og:description" content="Split, merge, organize, and route mixed PDF files through cleaner, audit-ready workflows with OCR-powered classification and customizable business rules." />
+  <meta property="og:image" content="https://filepackr.com/assets/filepackr-social-preview.png" />
+
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="PDF Splitter, Merger and Document Processing Software | filepackR" />
+  <meta name="twitter:description" content="Split, merge, organize, and route mixed PDF files through cleaner, audit-ready workflows." />
+  <meta name="twitter:image" content="https://filepackr.com/assets/filepackr-social-preview.png" />
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "WebSite",
+        "@id": "https://filepackr.com/#website",
+        "url": "https://filepackr.com/",
+        "name": "filepackR",
+        "alternateName": "filepackR Intelligent File Routing"
+      },
+      {
+        "@type": "Organization",
+        "@id": "https://filepackr.com/#organization",
+        "name": "filepackR",
+        "url": "https://filepackr.com/",
+        "logo": "https://filepackr.com/assets/filepackr-logo.png"
+      },
+      {
+        "@type": "SoftwareApplication",
+        "@id": "https://filepackr.com/#software",
+        "name": "filepackR",
+        "applicationCategory": "BusinessApplication",
+        "operatingSystem": "Windows",
+        "url": "https://filepackr.com/",
+        "description": "filepackR is PDF document-processing software for splitting, merging, combining, organizing, and routing mixed PDF files through configurable business workflows.",
+        "featureList": [
+          "PDF splitting and merging",
+          "OCR-powered PDF classification",
+          "Intelligent File Routing",
+          "Customizable document rules",
+          "Audit Center",
+          "Scan-quality checks",
+          "Local-first processing",
+          "Workflow-specific routing"
+        ]
+      }
+    ]
+  }
+  </script>
+
+  <!-- Google Analytics 4
+       Replace G-XXXXXXXXXX below with your real Measurement ID after creating the GA4 web stream. -->
+  <script>
+    window.FILEPACKR_GA_ID = "G-XXXXXXXXXX";
+    (() => {
+      const id = window.FILEPACKR_GA_ID;
+      if (!/^G-[A-Z0-9]+$/.test(id) || id === "G-XXXXXXXXXX") return;
+      const script = document.createElement("script");
+      script.async = true;
+      script.src = "https://www.googletagmanager.com/gtag/js?id=" + encodeURIComponent(id);
+      document.head.appendChild(script);
+      window.dataLayer = window.dataLayer || [];
+      window.gtag = function(){ dataLayer.push(arguments); };
+      gtag("js", new Date());
+      gtag("config", id);
+    })();
+    window.trackFilepackREvent = function(name, params) {
+      if (typeof window.gtag === "function") {
+        window.gtag("event", name, params || {});
+      }
+    };
+  </script>
+
   <style>
     :root {
       --navy: #1a2744;
@@ -440,9 +519,11 @@
       <div class="nav-links">
         <a href="#demo">Demo</a>
         <a href="#features">Features</a>
+        <a href="privacy.html">Privacy</a>
         <a href="#workflow">Workflow</a>
         <a href="#value">Value</a>
         <a href="#scale">Scalability</a>
+        <button class="button button-primary demo-trigger" type="button" data-source="Top navigation">Request a demo</button>
             </div>
     </div>
   </nav>
@@ -454,7 +535,7 @@
           <span class="eyebrow">Intelligent document intake and routing</span>
           <h1>From messy paperwork to <span>audit-ready records.</span></h1>
           <p class="hero-copy">
-            filepackR uses IFR, or Intelligent File Routing, to read mixed file packets, identify each document, separate pages, apply consistent filenames, and route organized records through the right workflows while surfacing the items that still need attention.
+            filepackR is PDF document-processing software powered by IFR, or Intelligent File Routing. It helps businesses split, combine, merge, organize, and route mixed PDF files through the right workflows while surfacing the items that still need attention.
           </p>
           <div class="hero-actions">
             <a class="button button-secondary" href="#features">Explore features</a>
@@ -472,7 +553,7 @@
               <div class="window-dot"></div>
               <div class="window-dot"></div>
               <div class="window-dot"></div>
-              <span class="window-title">filepackR Document Processor</span>
+              <span class="window-title">filepackR Intake Processor</span>
             </div>
             <div class="app-layout">
               <div class="app-panel">
@@ -621,8 +702,8 @@
 </defs>
 
 <rect class="bg" width="1200" height="620"/>
-<text x="52" y="52" class="label">From mixed packet to audit-ready records</text>
-<text x="52" y="78" class="small">A local-first workflow that sorts documents, surfaces exceptions, and keeps your team in control.</text>
+<text x="52" y="52" class="label">From mixed PDFs to audit-ready records</text>
+<text x="52" y="78" class="small">Split, combine, organize, and route PDF documents while keeping your team in control.</text>
 
 <!-- Step labels -->
 <g>
@@ -751,13 +832,13 @@
         <div class="features">
           <article class="feature">
             <div class="feature-icon">01</div>
-            <h3>IFR-powered classification</h3>
-            <p>Use Intelligent File Routing to read mixed document packets, identify each page, and route documents into consistently named PDF files.</p>
+            <h3>PDF splitting, merging, and organization</h3>
+            <p>Split mixed PDF packets into separate documents, combine related pages, merge supporting records, and apply consistent filenames automatically.</p>
           </article>
           <article class="feature">
             <div class="feature-icon teal">02</div>
-            <h3>Flexible routing rules</h3>
-            <p>Start with built-in recognition logic, then tailor phrases, filenames, checklists, destinations, and learned corrections around the way your business actually routes files.</p>
+            <h3>IFR-powered document routing</h3>
+            <p>Use OCR and customizable rules to identify PDF documents and route organized records through the workflows that keep your business moving.</p>
           </article>
           <article class="feature">
             <div class="feature-icon">03</div>
@@ -854,6 +935,35 @@
           <p>“The real value is not just faster filing. It is knowing the packet was organized consistently, reviewed, and checked before missing paperwork becomes a problem.”</p>
           <small>Built for document-heavy onboarding and compliance workflows</small>
         </aside>
+      </div>
+    </section>
+
+
+
+    <section class="section section-alt" id="pdf-processing">
+      <div class="container">
+        <div class="section-head">
+          <span class="kicker">PDF document processing</span>
+          <h2>Split, combine, merge, organize, and route PDFs in one workflow.</h2>
+          <p>filepackR goes beyond basic PDF splitting. It helps teams turn mixed PDF files into consistently named records, combine related pages, route documents into the right workflows, and flag exceptions before they become operational problems.</p>
+        </div>
+        <div class="steps">
+          <article class="step">
+            <div class="step-number">01</div>
+            <h3>Split mixed PDF files</h3>
+            <p>Separate large scanned packets into individual documents without manually rebuilding every file one page at a time.</p>
+          </article>
+          <article class="step">
+            <div class="step-number">02</div>
+            <h3>Merge related pages</h3>
+            <p>Combine supporting pages into the correct record so multi-page documents remain complete and easy to audit.</p>
+          </article>
+          <article class="step">
+            <div class="step-number">03</div>
+            <h3>Route organized records</h3>
+            <p>Use configurable workflows to route documents where they belong and surface items that need review or follow-up.</p>
+          </article>
+        </div>
       </div>
     </section>
 
@@ -1077,6 +1187,7 @@
             headers: { "Accept": "application/json" }
           });
           if (!response.ok) throw new Error("Submission failed");
+          window.trackFilepackREvent("demo_form_submit_success", { source: sourceInput.value || "website" });
           status.textContent = "Thank you. Your demo request has been sent.";
           status.className = "form-status success";
           form.reset();
@@ -1085,6 +1196,7 @@
           toggle.innerHTML = "<span>+</span> Add more details";
           setTimeout(closeModal, 1800);
         } catch (error) {
+          window.trackFilepackREvent("demo_form_submit_error", { source: sourceInput.value || "website" });
           status.textContent = "We could not send your request. Please try again or email steve@stevethibault.com.";
           status.className = "form-status error";
         } finally {
@@ -1095,5 +1207,21 @@
     })();
   </script>
 
+
+  <script>
+    document.querySelectorAll('a[href="#features"]').forEach((link) => {
+      link.addEventListener("click", () => {
+        window.trackFilepackREvent("explore_features_click");
+      });
+    });
+
+    document.querySelectorAll(".demo-trigger").forEach((button) => {
+      button.addEventListener("click", () => {
+        window.trackFilepackREvent("demo_form_open", {
+          source: button.dataset.source || "website"
+        });
+      });
+    });
+  </script>
 </body>
 </html>

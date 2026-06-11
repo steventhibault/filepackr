@@ -48,3 +48,10 @@ The process animation and preview remain included.
 Two small pasted-text issues were cleaned:
 - Team Collaberation -> Team Collaboration
 - Missing closing span tag fixed for Case Summary
+
+
+INLINE ANIMATION FIX
+--------------------
+The process animation is now embedded directly inside index.html.
+This prevents broken animation links if the SVG file is missed during upload.
+The standalone SVG asset remains included for reference and reuse.

@@ -62,26 +62,17 @@
   }
   </script>
 
-  <!-- Google Analytics 4
-       Replace G-XXXXXXXXXX below with your real Measurement ID after creating the GA4 web stream. -->
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-WD8PKJ6Q10"></script>
   <script>
-    window.FILEPACKR_GA_ID = "G-XXXXXXXXXX";
-    (() => {
-      const id = window.FILEPACKR_GA_ID;
-      if (!/^G-[A-Z0-9]+$/.test(id) || id === "G-XXXXXXXXXX") return;
-      const script = document.createElement("script");
-      script.async = true;
-      script.src = "https://www.googletagmanager.com/gtag/js?id=" + encodeURIComponent(id);
-      document.head.appendChild(script);
-      window.dataLayer = window.dataLayer || [];
-      window.gtag = function(){ dataLayer.push(arguments); };
-      gtag("js", new Date());
-      gtag("config", id);
-    })();
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'G-WD8PKJ6Q10');
+
     window.trackFilepackREvent = function(name, params) {
-      if (typeof window.gtag === "function") {
-        window.gtag("event", name, params || {});
-      }
+      gtag('event', name, params || {});
     };
   </script>
 

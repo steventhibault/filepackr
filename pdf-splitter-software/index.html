@@ -1,0 +1,923 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>PDF Splitter Software for Business Documents | filepackR</title>
+  <meta name="description" content="Split scanned PDF packets into organized, consistently named files with OCR-powered document recognition, human review, and local Windows processing." />
+  <meta name="robots" content="index, follow, max-image-preview:large" />
+  <link rel="canonical" href="https://filepackr.com/pdf-splitter-software/" />
+  <link rel="icon" type="image/svg+xml" href="../assets/favicon.svg" />
+  <link rel="apple-touch-icon" href="../assets/filepackr-icon.png" />
+
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://filepackr.com/pdf-splitter-software/" />
+  <meta property="og:title" content="PDF Splitter Software for Business Documents | filepackR" />
+  <meta property="og:description" content="Turn mixed scanned packets into organized PDF files with OCR-powered recognition, review controls, and consistent filenames." />
+  <meta property="og:image" content="https://filepackr.com/assets/filepackr-social-preview.png" />
+
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="PDF Splitter Software for Business Documents | filepackR" />
+  <meta name="twitter:description" content="Split scanned packets into organized, consistently named PDF files with OCR-powered recognition and human review." />
+  <meta name="twitter:image" content="https://filepackr.com/assets/filepackr-social-preview.png" />
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "BreadcrumbList",
+        "@id": "https://filepackr.com/pdf-splitter-software/#breadcrumb",
+        "itemListElement": [
+          {
+            "@type": "ListItem",
+            "position": 1,
+            "name": "Home",
+            "item": "https://filepackr.com/"
+          },
+          {
+            "@type": "ListItem",
+            "position": 2,
+            "name": "PDF Splitter Software",
+            "item": "https://filepackr.com/pdf-splitter-software/"
+          }
+        ]
+      },
+      {
+        "@type": "SoftwareApplication",
+        "@id": "https://filepackr.com/pdf-splitter-software/#software",
+        "name": "filepackR",
+        "applicationCategory": "BusinessApplication",
+        "applicationSubCategory": "PDF splitter software",
+        "operatingSystem": "Windows",
+        "url": "https://filepackr.com/pdf-splitter-software/",
+        "description": "PDF splitter software for separating mixed scanned packets into organized, consistently named files using OCR-powered document recognition, configurable rules, and human review.",
+        "featureList": [
+          "Split mixed PDF packets by document type",
+          "Group related pages into complete output files",
+          "Apply consistent PDF filenames",
+          "Review low-confidence assignments before export",
+          "Flag duplicate, blank, and poor-quality pages",
+          "Process documents locally on Windows"
+        ]
+      },
+      {
+        "@type": "FAQPage",
+        "@id": "https://filepackr.com/pdf-splitter-software/#faq",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "What is PDF splitter software?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "PDF splitter software separates one combined PDF into smaller files. filepackR is designed for recurring business packets, where pages also need to be identified, grouped, named, reviewed, and routed consistently."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Can filepackR split scanned PDF packets?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Yes. filepackR uses OCR and configurable document rules to analyze scanned pages, suggest document assignments, and prepare separate PDF outputs for review."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Can it keep multi-page documents together?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Yes. Related pages can be grouped into the same output PDF, reordered when needed, and reviewed before export."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Does filepackR process PDFs locally?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "The core PDF analysis and review workflow is designed to run locally on Windows so files can remain in the organization's existing folder structure."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Is filepackR only for employee onboarding?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "No. It began with onboarding and compliance-heavy personnel files, but its configurable rules and workflow templates can support other repeatable packet-based processes."
+            }
+          }
+        ]
+      }
+    ]
+  }
+  </script>
+
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-WD8PKJ6Q10"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag("js", new Date());
+    gtag("config", "G-WD8PKJ6Q10");
+    window.trackFilepackREvent = function(name, params) {
+      gtag("event", name, params || {});
+    };
+  </script>
+
+  <style>
+    :root {
+      --navy: #1a2744;
+      --navy-deep: #101a30;
+      --blue: #2563eb;
+      --blue-dark: #1e53cd;
+      --blue-light: #eaf1ff;
+      --teal: #0f766e;
+      --teal-light: #e4f6f3;
+      --amber: #c96a08;
+      --amber-light: #fff4df;
+      --slate: #62708a;
+      --line: #dfe7f2;
+      --bg: #f7fafd;
+      --panel: #ffffff;
+      --shadow: 0 22px 48px rgba(26,39,68,.13);
+      --max: 1180px;
+    }
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      color: var(--navy);
+      background:
+        radial-gradient(circle at 92% 4%, rgba(37,99,235,.14), transparent 30rem),
+        radial-gradient(circle at 5% 34%, rgba(15,118,110,.08), transparent 27rem),
+        var(--bg);
+      font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      line-height: 1.55;
+    }
+    a { color: inherit; text-decoration: none; }
+    button, input, select, textarea { font: inherit; }
+    .container { width: min(calc(100% - 40px), var(--max)); margin: auto; }
+    .nav {
+      position: sticky;
+      top: 0;
+      z-index: 30;
+      border-bottom: 1px solid rgba(223,231,242,.84);
+      background: rgba(247,250,253,.9);
+      backdrop-filter: blur(18px);
+    }
+    .nav-inner {
+      min-height: 76px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 24px;
+    }
+    .brand img { display: block; width: 255px; max-width: 50vw; height: auto; }
+    .nav-links { display: flex; align-items: center; gap: 26px; color: #4d5c74; font-size: 14px; font-weight: 760; }
+    .nav-links a:hover { color: var(--blue); }
+    .button {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 9px;
+      padding: 13px 19px;
+      border: 1px solid transparent;
+      border-radius: 12px;
+      font-weight: 800;
+      cursor: pointer;
+      transition: transform .2s ease, box-shadow .2s ease, border-color .2s ease;
+    }
+    .button:hover { transform: translateY(-2px); }
+    .button-primary {
+      color: white;
+      background: linear-gradient(135deg, var(--blue), var(--blue-dark));
+      box-shadow: 0 10px 24px rgba(37,99,235,.25);
+    }
+    .button-primary:hover { box-shadow: 0 15px 30px rgba(37,99,235,.32); }
+    .button-secondary { color: var(--navy); background: white; border-color: #cbd8e8; }
+    .button-secondary:hover { color: var(--blue); border-color: var(--blue); }
+    .breadcrumb { padding-top: 24px; color: #6d7b90; font-size: 13px; font-weight: 700; }
+    .breadcrumb a { color: var(--blue); }
+    .hero { padding: 52px 0 70px; overflow: hidden; }
+    .hero-grid { display: grid; grid-template-columns: 1.02fr .98fr; align-items: center; gap: 56px; }
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 9px;
+      padding: 7px 12px;
+      border-radius: 999px;
+      color: var(--teal);
+      background: var(--teal-light);
+      font-size: 12px;
+      font-weight: 900;
+      letter-spacing: .1em;
+      text-transform: uppercase;
+    }
+    .eyebrow::before { content: ""; width: 8px; height: 8px; border-radius: 50%; background: var(--teal); }
+    h1, h2 { letter-spacing: -.06em; }
+    h1 { max-width: 760px; margin: 19px 0 22px; font-size: clamp(3.1rem, 5.9vw, 5.55rem); line-height: .99; }
+    h1 span { color: var(--blue); }
+    .hero-copy { max-width: 680px; margin: 0 0 27px; color: #56657b; font-size: 1.16rem; }
+    .hero-actions { display: flex; flex-wrap: wrap; gap: 12px; }
+    .proof { display: flex; flex-wrap: wrap; gap: 18px; margin-top: 29px; color: #68768c; font-size: 13px; font-weight: 750; }
+    .proof span { display: inline-flex; align-items: center; gap: 7px; }
+    .proof i {
+      display: grid;
+      place-items: center;
+      width: 20px;
+      height: 20px;
+      border-radius: 50%;
+      color: var(--teal);
+      background: #e3f6f2;
+      font-style: normal;
+      font-size: 11px;
+    }
+    .splitter-card {
+      position: relative;
+      overflow: hidden;
+      padding: 18px;
+      border: 1px solid var(--line);
+      border-radius: 24px;
+      background: white;
+      box-shadow: var(--shadow);
+    }
+    .splitter-card::before {
+      content: "";
+      position: absolute;
+      top: -130px;
+      right: -110px;
+      width: 280px;
+      height: 280px;
+      border-radius: 50%;
+      background: rgba(37,99,235,.09);
+    }
+    .window-bar { position: relative; display: flex; align-items: center; gap: 7px; padding-bottom: 14px; border-bottom: 1px solid #eef2f7; }
+    .window-dot { width: 9px; height: 9px; border-radius: 50%; background: #60a5fa; }
+    .window-dot:first-child { background: #f59e0b; }
+    .window-dot:nth-child(2) { background: #22c55e; }
+    .window-title { margin-left: 8px; color: #66758b; font-size: 12px; font-weight: 850; }
+    .packet-map { position: relative; display: grid; grid-template-columns: .78fr 32px 1.22fr; align-items: center; gap: 10px; padding-top: 18px; }
+    .source-stack { position: relative; height: 278px; }
+    .page-sheet {
+      position: absolute;
+      width: 128px;
+      height: 170px;
+      padding: 18px 14px;
+      border: 1px solid #dfe7f2;
+      border-radius: 13px;
+      background: white;
+      box-shadow: 0 12px 25px rgba(26,39,68,.11);
+    }
+    .page-sheet:nth-child(1) { left: 14px; top: 14px; transform: rotate(-5deg); }
+    .page-sheet:nth-child(2) { left: 35px; top: 49px; transform: rotate(2deg); }
+    .page-sheet:nth-child(3) { left: 20px; top: 89px; transform: rotate(-1deg); }
+    .page-sheet strong { display: block; margin-bottom: 12px; color: var(--navy); font-size: 11px; }
+    .paper-line { height: 5px; margin-top: 8px; border-radius: 4px; background: #dce6f3; }
+    .paper-line.short { width: 62%; }
+    .source-label { position: absolute; bottom: 2px; left: 15px; color: #6a788e; font-size: 11px; font-weight: 800; }
+    .route-arrow { display: grid; place-items: center; width: 32px; height: 32px; border-radius: 50%; color: white; background: var(--blue); font-weight: 900; box-shadow: 0 8px 18px rgba(37,99,235,.25); }
+    .output-list { display: grid; gap: 9px; }
+    .output-file {
+      display: grid;
+      grid-template-columns: 31px 1fr auto;
+      align-items: center;
+      gap: 9px;
+      padding: 10px;
+      border: 1px solid #e3ebf4;
+      border-radius: 12px;
+      background: #fbfdff;
+    }
+    .file-icon { display: grid; place-items: center; width: 31px; height: 36px; border-radius: 7px; color: var(--blue); background: var(--blue-light); font-size: 9px; font-weight: 900; }
+    .file-icon.teal { color: var(--teal); background: var(--teal-light); }
+    .output-file strong { display: block; font-size: 11px; }
+    .output-file small { display: block; margin-top: 2px; color: #77859a; font-size: 9px; }
+    .status { padding: 3px 6px; border-radius: 999px; color: var(--teal); background: #e8f7f3; font-size: 8px; font-weight: 900; text-transform: uppercase; }
+    .status.review { color: var(--amber); background: var(--amber-light); }
+    .trust { padding-bottom: 20px; }
+    .trust-box {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: space-between;
+      gap: 18px;
+      padding: 18px 22px;
+      border: 1px solid var(--line);
+      border-radius: 16px;
+      background: white;
+    }
+    .trust-box strong { font-size: 14px; }
+    .trust-list { display: flex; flex-wrap: wrap; gap: 18px; color: #647289; font-size: 13px; font-weight: 780; }
+    .section { padding: 64px 0; }
+    .section-alt { border-top: 1px solid #e9eff6; border-bottom: 1px solid #e9eff6; background: white; }
+    .section-head { max-width: 800px; margin-bottom: 38px; }
+    .kicker { color: var(--teal); font-size: 12px; font-weight: 900; letter-spacing: .13em; text-transform: uppercase; }
+    h2 { margin: 12px 0 13px; font-size: clamp(2rem, 4vw, 3.5rem); line-height: 1.06; }
+    .section-head p, .lead { margin: 0; color: #647389; font-size: 1.07rem; }
+    .features { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; }
+    .feature {
+      min-height: 177px;
+      display: grid;
+      grid-template-columns: 40px 1fr;
+      column-gap: 14px;
+      align-content: start;
+      padding: 20px;
+      border: 1px solid var(--line);
+      border-radius: 17px;
+      background: white;
+      transition: transform .2s ease, border-color .2s ease, box-shadow .2s ease;
+    }
+    .feature:hover { transform: translateY(-4px); border-color: #c0d1e8; box-shadow: 0 16px 34px rgba(26,39,68,.09); }
+    .feature-icon {
+      grid-row: 1 / span 2;
+      display: grid;
+      place-items: center;
+      width: 40px;
+      height: 40px;
+      border-radius: 12px;
+      color: var(--blue);
+      background: var(--blue-light);
+      font-size: 10px;
+      font-weight: 900;
+    }
+    .feature-icon.teal { color: var(--teal); background: var(--teal-light); }
+    .feature h3 { margin: 1px 0 7px; font-size: 1.05rem; }
+    .feature p { margin: 0; color: #69788d; font-size: .93rem; }
+    .steps { display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; }
+    .step { padding: 22px; border: 1px solid var(--line); border-radius: 18px; background: white; }
+    .step-number { display: grid; place-items: center; width: 36px; height: 36px; margin-bottom: 17px; border-radius: 10px; color: white; background: var(--navy); font-weight: 900; }
+    .step h3 { margin: 0 0 8px; font-size: 1.08rem; }
+    .step p { margin: 0; color: #69788d; font-size: .93rem; }
+    .difference-grid { display: grid; grid-template-columns: .88fr 1.12fr; align-items: start; gap: 48px; }
+    .difference-copy .lead { margin-bottom: 23px; }
+    .check-list { display: grid; gap: 12px; }
+    .check-item { display: flex; gap: 13px; padding: 15px; border: 1px solid var(--line); border-radius: 14px; background: white; }
+    .check {
+      display: grid;
+      place-items: center;
+      flex: 0 0 auto;
+      width: 25px;
+      height: 25px;
+      border-radius: 50%;
+      color: var(--teal);
+      background: var(--teal-light);
+      font-weight: 900;
+    }
+    .check-item strong { display: block; margin-bottom: 2px; font-size: .96rem; }
+    .check-item p { margin: 0; color: #69788d; font-size: .9rem; }
+    .comparison {
+      overflow: hidden;
+      border: 1px solid var(--line);
+      border-radius: 22px;
+      background: white;
+      box-shadow: var(--shadow);
+    }
+    .comparison-head { padding: 23px 24px; color: white; background: linear-gradient(135deg, var(--navy), #10213f); }
+    .comparison-head h3 { margin: 0 0 5px; font-size: 1.35rem; }
+    .comparison-head p { margin: 0; color: #c3cee0; font-size: .92rem; }
+    .compare-row { display: grid; grid-template-columns: 1fr 1fr; border-top: 1px solid #e8eef6; }
+    .compare-cell { padding: 18px 20px; }
+    .compare-cell:first-child { border-right: 1px solid #e8eef6; background: #fafcff; }
+    .compare-cell strong { display: block; margin-bottom: 4px; font-size: .93rem; }
+    .compare-cell p { margin: 0; color: #6a788d; font-size: .87rem; }
+    .fit-note { padding: 16px 20px; border-top: 1px solid #e8eef6; color: #53627a; background: var(--teal-light); font-size: .9rem; font-weight: 700; }
+    .use-cases { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; }
+    .use-case { padding: 23px; border: 1px solid var(--line); border-radius: 18px; background: white; }
+    .use-case span { color: var(--teal); font-size: 11px; font-weight: 900; letter-spacing: .12em; text-transform: uppercase; }
+    .use-case h3 { margin: 9px 0 8px; font-size: 1.15rem; }
+    .use-case p { margin: 0; color: #69788d; font-size: .93rem; }
+    .security-panel {
+      display: grid;
+      grid-template-columns: 1.08fr .92fr;
+      gap: 42px;
+      align-items: center;
+      padding: 38px;
+      border-radius: 25px;
+      color: white;
+      background: linear-gradient(145deg, var(--navy), var(--navy-deep));
+      box-shadow: var(--shadow);
+    }
+    .security-panel h2 { margin-top: 8px; }
+    .security-panel p { margin: 0; color: #c1cce0; }
+    .security-points { display: grid; gap: 11px; }
+    .security-point { padding: 14px 15px; border: 1px solid rgba(255,255,255,.13); border-radius: 13px; background: rgba(255,255,255,.06); }
+    .security-point strong { display: block; margin-bottom: 3px; font-size: .95rem; }
+    .security-point small { color: #c1cce0; font-size: .86rem; }
+    .faq-list { display: grid; gap: 12px; }
+    details { border: 1px solid var(--line); border-radius: 15px; background: white; }
+    summary { position: relative; padding: 19px 54px 19px 20px; cursor: pointer; list-style: none; font-weight: 850; }
+    summary::-webkit-details-marker { display: none; }
+    summary::after { content: "+"; position: absolute; right: 20px; top: 14px; color: var(--blue); font-size: 25px; font-weight: 500; }
+    details[open] summary::after { content: "-"; }
+    details p { margin: 0; padding: 0 20px 20px; color: #65748a; }
+    .cta { padding: 64px 0; }
+    .cta-box {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: space-between;
+      gap: 26px;
+      padding: 42px;
+      border-radius: 25px;
+      color: white;
+      background: linear-gradient(135deg, #14233f, var(--navy));
+      box-shadow: var(--shadow);
+    }
+    .cta-box h2 { margin: 0 0 8px; font-size: clamp(2rem, 4vw, 3.15rem); }
+    .cta-box p { max-width: 680px; margin: 0; color: #becbe0; }
+    .cta-box .button-primary { color: var(--navy); background: white; box-shadow: none; }
+    footer { padding: 25px 0 42px; color: #738198; font-size: 13px; }
+    .footer-inner { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 17px; padding-top: 21px; border-top: 1px solid var(--line); }
+    .footer-links { display: flex; flex-wrap: wrap; gap: 18px; }
+    .demo-modal[hidden] { display: none; }
+    .demo-modal {
+      position: fixed;
+      inset: 0;
+      z-index: 100;
+      display: grid;
+      place-items: center;
+      padding: 20px;
+      background: rgba(16,26,48,.62);
+      backdrop-filter: blur(6px);
+    }
+    .demo-modal-card {
+      width: min(760px, 100%);
+      max-height: min(92vh, 900px);
+      overflow: auto;
+      border: 1px solid var(--line);
+      border-radius: 22px;
+      background: white;
+      box-shadow: 0 28px 72px rgba(16,26,48,.28);
+    }
+    .demo-modal-header { display: flex; align-items: flex-start; justify-content: space-between; gap: 18px; padding: 24px 24px 16px; border-bottom: 1px solid #eaf0f6; }
+    .demo-modal-header h2 { margin: 4px 0 6px; font-size: clamp(1.75rem, 4vw, 2.35rem); }
+    .demo-modal-header p { margin: 0; color: #647389; font-size: .96rem; }
+    .demo-close { flex: 0 0 auto; width: 38px; height: 38px; border: 1px solid #d9e2ef; border-radius: 10px; background: white; color: var(--navy); font-size: 24px; line-height: 1; cursor: pointer; }
+    .demo-close:hover { color: var(--blue); border-color: var(--blue); }
+    .demo-form { display: grid; gap: 16px; padding: 22px 24px 24px; }
+    .form-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 14px; }
+    .form-field { display: grid; gap: 7px; }
+    .form-field.full { grid-column: 1 / -1; }
+    .form-field label { color: var(--navy); font-size: 13px; font-weight: 800; }
+    .form-field input, .form-field select, .form-field textarea {
+      width: 100%;
+      padding: 12px 13px;
+      border: 1px solid #cfd9e8;
+      border-radius: 10px;
+      color: var(--navy);
+      background: white;
+      outline: none;
+      transition: border-color .18s ease, box-shadow .18s ease;
+    }
+    .form-field textarea { min-height: 128px; resize: vertical; }
+    .form-field input:focus, .form-field select:focus, .form-field textarea:focus { border-color: var(--blue); box-shadow: 0 0 0 3px rgba(37,99,235,.12); }
+    .details-toggle { display: inline-flex; align-items: center; gap: 7px; width: fit-content; padding: 0; border: 0; color: var(--blue); background: transparent; font-weight: 800; cursor: pointer; }
+    .optional-details[hidden] { display: none; }
+    .form-actions { display: flex; align-items: center; justify-content: space-between; gap: 14px; flex-wrap: wrap; padding-top: 3px; }
+    .form-note { margin: 0; color: #738198; font-size: 12px; }
+    .form-status { min-height: 20px; margin: 0; font-size: 13px; font-weight: 750; }
+    .form-status.success { color: var(--teal); }
+    .form-status.error { color: #b42318; }
+    .honeypot { position: absolute !important; left: -9999px !important; width: 1px !important; height: 1px !important; opacity: 0 !important; pointer-events: none !important; }
+    body.modal-open { overflow: hidden; }
+    @media (max-width: 960px) {
+      .hero-grid, .difference-grid, .security-panel { grid-template-columns: 1fr; }
+      .features { grid-template-columns: repeat(2, 1fr); }
+      .steps { grid-template-columns: repeat(2, 1fr); }
+      .hero-visual { max-width: 680px; }
+      .nav-links a:not(.button) { display: none; }
+    }
+    @media (max-width: 680px) {
+      .container { width: min(calc(100% - 24px), var(--max)); }
+      .nav-inner { min-height: 68px; gap: 10px; }
+      .brand img { width: 180px; }
+      .nav-links { gap: 0; }
+      .nav-links .button { padding: 10px 11px; font-size: 12px; }
+      .breadcrumb { padding-top: 18px; }
+      .hero { padding: 38px 0 52px; }
+      h1 { font-size: clamp(2.85rem, 15vw, 4rem); }
+      .packet-map { grid-template-columns: 1fr; }
+      .source-stack { height: 230px; }
+      .route-arrow { margin: -10px auto 0; transform: rotate(90deg); }
+      .features, .steps, .use-cases { grid-template-columns: 1fr; }
+      .feature { min-height: auto; }
+      .compare-row { grid-template-columns: 1fr; }
+      .compare-cell:first-child { border-right: 0; border-bottom: 1px solid #e8eef6; }
+      .section, .cta { padding: 49px 0; }
+      .security-panel, .cta-box { padding: 27px; }
+      .demo-modal { padding: 10px; }
+      .demo-modal-card { max-height: 96vh; border-radius: 16px; }
+      .demo-modal-header { padding: 18px 17px 14px; }
+      .demo-form { padding: 17px; }
+      .form-grid { grid-template-columns: 1fr; }
+      .form-field.full { grid-column: auto; }
+      .form-actions { align-items: stretch; }
+      .form-actions .button { width: 100%; }
+    }
+  </style>
+</head>
+<body>
+  <nav class="nav">
+    <div class="container nav-inner">
+      <a class="brand" href="../" aria-label="filepackR home">
+        <img src="../assets/filepackr-logo.png" alt="filepackR logo" />
+      </a>
+      <div class="nav-links">
+        <a href="#how-it-works">How it works</a>
+        <a href="#features">Features</a>
+        <a href="#faq">FAQ</a>
+        <a href="../">Homepage</a>
+        <button class="button button-primary demo-trigger" type="button" data-source="PDF splitter top navigation">Request a demo</button>
+      </div>
+    </div>
+  </nav>
+
+  <main>
+    <div class="container breadcrumb" aria-label="Breadcrumb"><a href="../">Home</a> / PDF Splitter Software</div>
+
+    <section class="hero">
+      <div class="container hero-grid">
+        <div>
+          <span class="eyebrow">PDF splitter software for Windows</span>
+          <h1>Split mixed PDF packets into <span>organized business records.</span></h1>
+          <p class="hero-copy">
+            filepackR helps teams separate scanned PDF packets by document type, keep related pages together, apply consistent filenames, and review every suggested output before export.
+          </p>
+          <div class="hero-actions">
+            <button class="button button-primary demo-trigger" type="button" data-source="PDF splitter hero">See filepackR for your workflow</button>
+            <a class="button button-secondary" href="#how-it-works">See how splitting works</a>
+          </div>
+          <div class="proof">
+            <span><i>&#10003;</i> OCR-powered recognition</span>
+            <span><i>&#10003;</i> Human review before export</span>
+            <span><i>&#10003;</i> Local Windows processing</span>
+          </div>
+        </div>
+
+        <div class="hero-visual" aria-label="Illustration of a mixed PDF packet being split into named documents">
+          <div class="splitter-card">
+            <div class="window-bar">
+              <span class="window-dot"></span>
+              <span class="window-dot"></span>
+              <span class="window-dot"></span>
+              <span class="window-title">filepackR PDF packet review</span>
+            </div>
+            <div class="packet-map">
+              <div class="source-stack">
+                <div class="page-sheet"><strong>Page 1</strong><div class="paper-line"></div><div class="paper-line"></div><div class="paper-line short"></div></div>
+                <div class="page-sheet"><strong>Page 8</strong><div class="paper-line"></div><div class="paper-line short"></div><div class="paper-line"></div></div>
+                <div class="page-sheet"><strong>Page 17</strong><div class="paper-line short"></div><div class="paper-line"></div><div class="paper-line"></div></div>
+                <span class="source-label">24-page combined scan</span>
+              </div>
+              <span class="route-arrow" aria-hidden="true">&rarr;</span>
+              <div class="output-list">
+                <div class="output-file"><span class="file-icon">PDF</span><span><strong>Job Application.pdf</strong><small>4 pages grouped</small></span><span class="status">Ready</span></div>
+                <div class="output-file"><span class="file-icon teal">PDF</span><span><strong>I-9 Verification.pdf</strong><small>3 pages grouped</small></span><span class="status">Ready</span></div>
+                <div class="output-file"><span class="file-icon">PDF</span><span><strong>Payroll.pdf</strong><small>2 pages grouped</small></span><span class="status review">Review</span></div>
+                <div class="output-file"><span class="file-icon teal">PDF</span><span><strong>Policy Acknowledgments.pdf</strong><small>5 pages grouped</small></span><span class="status">Ready</span></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="trust">
+      <div class="container trust-box">
+        <strong>Designed for recurring, document-heavy PDF workflows.</strong>
+        <div class="trust-list">
+          <span>&#10003; Onboarding packets</span>
+          <span>&#10003; Compliance records</span>
+          <span>&#10003; Client intake</span>
+          <span>&#10003; Custom document sets</span>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section-alt" id="features">
+      <div class="container">
+        <div class="section-head">
+          <span class="kicker">Beyond page extraction</span>
+          <h2>PDF splitting built for the work that happens after the split.</h2>
+          <p>A basic PDF splitter can extract page ranges. filepackR is designed for teams that also need to identify documents, group pages, name outputs, catch exceptions, and keep a repeatable process.</p>
+        </div>
+        <div class="features">
+          <article class="feature">
+            <div class="feature-icon">OCR</div>
+            <h3>Recognize document types</h3>
+            <p>Analyze scanned page content with OCR, built-in rules, custom phrases, and remembered corrections.</p>
+          </article>
+          <article class="feature">
+            <div class="feature-icon teal">SPLIT</div>
+            <h3>Separate mixed packets</h3>
+            <p>Turn one long scan into individual PDF records based on the documents found inside the packet.</p>
+          </article>
+          <article class="feature">
+            <div class="feature-icon">GROUP</div>
+            <h3>Keep related pages together</h3>
+            <p>Combine supporting pages into the correct output so multi-page forms remain complete and in order.</p>
+          </article>
+          <article class="feature">
+            <div class="feature-icon teal">NAME</div>
+            <h3>Standardize filenames</h3>
+            <p>Apply preferred output names consistently instead of renaming every split PDF by hand.</p>
+          </article>
+          <article class="feature">
+            <div class="feature-icon">QA</div>
+            <h3>Review uncertain pages</h3>
+            <p>Use confidence details, duplicate checks, and scan-quality warnings to focus staff on exceptions.</p>
+          </article>
+          <article class="feature">
+            <div class="feature-icon teal">LOCAL</div>
+            <h3>Work in existing folders</h3>
+            <p>Process PDFs locally on Windows and export organized files into the folder structure your team uses.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="how-it-works">
+      <div class="container">
+        <div class="section-head">
+          <span class="kicker">How it works</span>
+          <h2>From combined scan to reviewed PDF outputs in four steps.</h2>
+          <p>The software prepares the routine work while keeping your staff in control of every final file.</p>
+        </div>
+        <div class="steps">
+          <article class="step">
+            <div class="step-number">1</div>
+            <h3>Open the packet</h3>
+            <p>Load a combined PDF manually, drag it into the application, or use a watched scanner folder.</p>
+          </article>
+          <article class="step">
+            <div class="step-number">2</div>
+            <h3>Analyze the pages</h3>
+            <p>filepackR reads page content locally and suggests document assignments and page groupings.</p>
+          </article>
+          <article class="step">
+            <div class="step-number">3</div>
+            <h3>Review the split</h3>
+            <p>Confirm names and groups, rotate or reorder pages, and resolve low-confidence or duplicate items.</p>
+          </article>
+          <article class="step">
+            <div class="step-number">4</div>
+            <h3>Export clean PDFs</h3>
+            <p>Create separate, consistently named files in the intended destination after the review is complete.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section-alt">
+      <div class="container difference-grid">
+        <div class="difference-copy">
+          <span class="kicker">Choose the right tool</span>
+          <h2>When a basic online splitter is not enough.</h2>
+          <p class="lead">One-off page extraction and recurring business packet processing are different jobs. filepackR is built for the second one.</p>
+          <div class="check-list">
+            <div class="check-item"><span class="check">&#10003;</span><div><strong>Repeatable document sets</strong><p>Use defined document rules and expected outputs across similar packets.</p></div></div>
+            <div class="check-item"><span class="check">&#10003;</span><div><strong>Human-reviewed automation</strong><p>See suggested assignments and warnings before the software writes final files.</p></div></div>
+            <div class="check-item"><span class="check">&#10003;</span><div><strong>Operational follow-through</strong><p>Move from splitting into naming, folder routing, checklist review, and later auditing.</p></div></div>
+          </div>
+        </div>
+
+        <div class="comparison" aria-label="Comparison of basic PDF splitters and filepackR">
+          <div class="comparison-head">
+            <h3>Basic splitter vs. filepackR</h3>
+            <p>Both can separate pages. The workflow around those pages is where the difference appears.</p>
+          </div>
+          <div class="compare-row">
+            <div class="compare-cell"><strong>Basic PDF splitter</strong><p>You choose page ranges manually.</p></div>
+            <div class="compare-cell"><strong>filepackR</strong><p>OCR and document rules suggest where each document begins and ends.</p></div>
+          </div>
+          <div class="compare-row">
+            <div class="compare-cell"><strong>Basic PDF splitter</strong><p>Outputs often need to be renamed one at a time.</p></div>
+            <div class="compare-cell"><strong>filepackR</strong><p>Preferred business filenames are prepared as part of the split.</p></div>
+          </div>
+          <div class="compare-row">
+            <div class="compare-cell"><strong>Basic PDF splitter</strong><p>Little context about missing, duplicate, or weak pages.</p></div>
+            <div class="compare-cell"><strong>filepackR</strong><p>Review tools surface uncertainty, duplicates, blanks, and scan-quality issues.</p></div>
+          </div>
+          <div class="compare-row">
+            <div class="compare-cell"><strong>Basic PDF splitter</strong><p>Best for occasional, simple extraction.</p></div>
+            <div class="compare-cell"><strong>filepackR</strong><p>Best for recurring packets that need consistent processing and review.</p></div>
+          </div>
+          <div class="fit-note">A basic tool may be enough for a one-time split. filepackR is for turning PDF splitting into a dependable business workflow.</div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="use-cases">
+      <div class="container">
+        <div class="section-head">
+          <span class="kicker">Business use cases</span>
+          <h2>Built for packets where every document has a place.</h2>
+          <p>Start with one repeatable workflow, then adapt document rules, names, and checklists as your needs grow.</p>
+        </div>
+        <div class="use-cases">
+          <article class="use-case">
+            <span>HR and operations</span>
+            <h3>Employee onboarding packets</h3>
+            <p>Separate applications, tax forms, payroll records, acknowledgments, IDs, authorizations, and other hiring documents.</p>
+          </article>
+          <article class="use-case">
+            <span>Compliance teams</span>
+            <h3>Credentialing and renewals</h3>
+            <p>Organize recurring forms and supporting records while tracking expected, conditional, or missing items.</p>
+          </article>
+          <article class="use-case">
+            <span>Service organizations</span>
+            <h3>Client and case intake</h3>
+            <p>Apply the same splitting and naming model to applications, signed agreements, case records, and custom packet types.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container security-panel">
+        <div>
+          <span class="kicker" style="color:#73d6c9">Local-first PDF processing</span>
+          <h2>Keep sensitive documents closer to the systems you control.</h2>
+          <p>The core file analysis and packet-review workflow is designed to run locally on Windows. PDFs can remain in the organization's existing folders instead of being uploaded to a general-purpose online splitter for routine processing.</p>
+        </div>
+        <div class="security-points">
+          <div class="security-point"><strong>Local OCR and review</strong><small>Analyze scanned packet pages on the workstation where filepackR is installed.</small></div>
+          <div class="security-point"><strong>Existing folder structure</strong><small>Export organized PDFs into familiar Windows folders and destinations.</small></div>
+          <div class="security-point"><strong>Metadata-only history</strong><small>Operational history is designed not to store OCR text or scanned-document contents.</small></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section-alt" id="faq">
+      <div class="container">
+        <div class="section-head">
+          <span class="kicker">Frequently asked questions</span>
+          <h2>PDF splitter software questions, answered.</h2>
+        </div>
+        <div class="faq-list">
+          <details>
+            <summary>What is PDF splitter software?</summary>
+            <p>PDF splitter software separates one combined PDF into smaller files. filepackR is designed for recurring business packets, where pages also need to be identified, grouped, named, reviewed, and routed consistently.</p>
+          </details>
+          <details>
+            <summary>Can filepackR split scanned PDF packets?</summary>
+            <p>Yes. filepackR uses OCR and configurable document rules to analyze scanned pages, suggest document assignments, and prepare separate PDF outputs for review.</p>
+          </details>
+          <details>
+            <summary>Can it keep multi-page documents together?</summary>
+            <p>Yes. Related pages can be grouped into the same output PDF, reordered when needed, and reviewed before export.</p>
+          </details>
+          <details>
+            <summary>Does filepackR process PDFs locally?</summary>
+            <p>The core PDF analysis and review workflow is designed to run locally on Windows so files can remain in the organization's existing folder structure.</p>
+          </details>
+          <details>
+            <summary>Is filepackR only for employee onboarding?</summary>
+            <p>No. It began with onboarding and compliance-heavy personnel files, but configurable rules and workflow templates can support other repeatable packet-based processes.</p>
+          </details>
+          <details>
+            <summary>Can staff correct the suggested split?</summary>
+            <p>Yes. The workflow is intentionally review-first. Staff can change assignments and filenames, group or reorder pages, rotate scans, and leave uncertain pages unsorted before export.</p>
+          </details>
+        </div>
+      </div>
+    </section>
+
+    <section class="cta">
+      <div class="container cta-box">
+        <div>
+          <h2>Make PDF splitting part of a cleaner workflow.</h2>
+          <p>Show us the packet your team processes today. We will discuss how filepackR could recognize, split, name, review, and route those documents more consistently.</p>
+        </div>
+        <button class="button button-primary demo-trigger" type="button" data-source="PDF splitter bottom call-to-action">Request a demo</button>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container footer-inner">
+      <span>&copy; <span id="year"></span> filepackR. All rights reserved.</span>
+      <div class="footer-links">
+        <a href="../">Homepage</a>
+        <a href="../privacy.html">Privacy</a>
+        <a href="mailto:steve@stevethibault.com">Contact</a>
+      </div>
+    </div>
+  </footer>
+
+  <div class="demo-modal" id="demoModal" hidden aria-hidden="true" role="dialog" aria-modal="true" aria-labelledby="demoModalTitle">
+    <div class="demo-modal-card">
+      <div class="demo-modal-header">
+        <div>
+          <span class="kicker">Request a demo</span>
+          <h2 id="demoModalTitle">See how filepackR can split your packets.</h2>
+          <p>Tell us about the PDFs your team processes. We will follow up to discuss your workflow and whether filepackR is a good fit.</p>
+        </div>
+        <button class="demo-close" type="button" aria-label="Close demo request form">&times;</button>
+      </div>
+      <form class="demo-form" id="demoRequestForm" action="https://formsubmit.co/ajax/steve@stevethibault.com" method="POST">
+        <input type="hidden" name="_subject" value="New filepackR PDF Splitter Demo Request" />
+        <input type="hidden" name="_template" value="table" />
+        <input type="hidden" name="Page source" id="demoSource" value="PDF Splitter Software page" />
+        <input class="honeypot" type="text" name="_honey" tabindex="-1" autocomplete="off" aria-hidden="true" />
+        <div class="form-grid">
+          <div class="form-field"><label for="firstName">First name *</label><input id="firstName" name="First name" type="text" autocomplete="given-name" required /></div>
+          <div class="form-field"><label for="lastName">Last name *</label><input id="lastName" name="Last name" type="text" autocomplete="family-name" required /></div>
+          <div class="form-field"><label for="workEmail">Work email *</label><input id="workEmail" name="email" type="email" autocomplete="email" required /></div>
+          <div class="form-field"><label for="phone">Phone number</label><input id="phone" name="Phone number" type="tel" autocomplete="tel" /></div>
+          <div class="form-field"><label for="businessName">Business or organization *</label><input id="businessName" name="Business or organization" type="text" autocomplete="organization" required /></div>
+          <div class="form-field"><label for="packetVolume">Packets processed per month</label><select id="packetVolume" name="Approximate monthly packet volume"><option value="">Select one</option><option>Fewer than 25</option><option>25-100</option><option>101-500</option><option>More than 500</option><option>Not sure</option></select></div>
+          <div class="form-field full"><label for="needs">What types of PDF packets do you process? *</label><textarea id="needs" name="Description of needs" required placeholder="Describe the documents in a typical packet, how you split them today, and where the finished PDFs need to go."></textarea></div>
+        </div>
+        <button class="details-toggle" id="detailsToggle" type="button" aria-expanded="false" aria-controls="optionalDetails"><span>+</span> Add more details</button>
+        <div class="optional-details" id="optionalDetails" hidden>
+          <div class="form-grid">
+            <div class="form-field"><label for="businessType">Business type</label><select id="businessType" name="Business type"><option value="">Select one</option><option>Home healthcare</option><option>Healthcare staffing</option><option>Human resources</option><option>Credentialing</option><option>Social services</option><option>Education</option><option>Property management</option><option>Legal or administrative services</option><option>Insurance</option><option>Other</option></select></div>
+            <div class="form-field"><label for="biggestChallenge">Biggest challenge</label><select id="biggestChallenge" name="Biggest challenge"><option value="">Select one</option><option>Manual PDF splitting</option><option>Document recognition</option><option>Keeping multi-page forms together</option><option>Inconsistent filenames</option><option>Missing paperwork</option><option>Poor scan quality</option><option>Folder routing</option><option>Other</option></select></div>
+          </div>
+        </div>
+        <p class="form-status" id="formStatus" aria-live="polite"></p>
+        <div class="form-actions">
+          <p class="form-note">Your information will only be used to respond to your inquiry.</p>
+          <button class="button button-primary" id="submitDemoRequest" type="submit">Submit demo request</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <script>
+    document.getElementById("year").textContent = new Date().getFullYear();
+    (() => {
+      const modal = document.getElementById("demoModal");
+      const form = document.getElementById("demoRequestForm");
+      const closeButton = modal.querySelector(".demo-close");
+      const sourceInput = document.getElementById("demoSource");
+      const toggle = document.getElementById("detailsToggle");
+      const optionalDetails = document.getElementById("optionalDetails");
+      const status = document.getElementById("formStatus");
+      const submitButton = document.getElementById("submitDemoRequest");
+
+      const openModal = (source) => {
+        sourceInput.value = source || "PDF Splitter Software page";
+        modal.hidden = false;
+        modal.setAttribute("aria-hidden", "false");
+        document.body.classList.add("modal-open");
+        status.textContent = "";
+        status.className = "form-status";
+        requestAnimationFrame(() => document.getElementById("firstName").focus());
+      };
+      const closeModal = () => {
+        modal.hidden = true;
+        modal.setAttribute("aria-hidden", "true");
+        document.body.classList.remove("modal-open");
+      };
+
+      document.querySelectorAll(".demo-trigger").forEach((button) => {
+        button.addEventListener("click", () => {
+          openModal(button.dataset.source);
+          window.trackFilepackREvent("demo_form_open", { source: button.dataset.source || "pdf_splitter_page" });
+        });
+      });
+      closeButton.addEventListener("click", closeModal);
+      modal.addEventListener("click", (event) => { if (event.target === modal) closeModal(); });
+      document.addEventListener("keydown", (event) => { if (event.key === "Escape" && !modal.hidden) closeModal(); });
+      toggle.addEventListener("click", () => {
+        const isOpen = !optionalDetails.hidden;
+        optionalDetails.hidden = isOpen;
+        toggle.setAttribute("aria-expanded", String(!isOpen));
+        toggle.innerHTML = isOpen ? "<span>+</span> Add more details" : "<span>-</span> Hide additional details";
+      });
+
+      form.addEventListener("submit", async (event) => {
+        event.preventDefault();
+        if (!form.reportValidity()) return;
+        submitButton.disabled = true;
+        submitButton.textContent = "Sending...";
+        status.textContent = "";
+        status.className = "form-status";
+        try {
+          const response = await fetch(form.action, {
+            method: "POST",
+            body: new FormData(form),
+            headers: { "Accept": "application/json" }
+          });
+          if (!response.ok) throw new Error("Submission failed");
+          window.trackFilepackREvent("demo_form_submit_success", { source: sourceInput.value || "pdf_splitter_page" });
+          status.textContent = "Thank you. Your demo request has been sent.";
+          status.className = "form-status success";
+          form.reset();
+          optionalDetails.hidden = true;
+          toggle.setAttribute("aria-expanded", "false");
+          toggle.innerHTML = "<span>+</span> Add more details";
+          setTimeout(closeModal, 1800);
+        } catch (error) {
+          window.trackFilepackREvent("demo_form_submit_error", { source: sourceInput.value || "pdf_splitter_page" });
+          status.textContent = "We could not send your request. Please try again or email steve@stevethibault.com.";
+          status.className = "form-status error";
+        } finally {
+          submitButton.disabled = false;
+          submitButton.textContent = "Submit demo request";
+        }
+      });
+    })();
+  </script>
+</body>
+</html>

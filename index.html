@@ -1,557 +1,1095 @@
-
-filepackr screenshot(1).jpg
-
-Pasted text(8).txt
-Document
-I need to showcase this image of the software somewhere on the site. It can be resized if necesssary. Where do you suggest? 
-
-Thought for 22s
-I’d put it right after the trust strip and before the “See the workflow” animation.
-
-Reason: this screenshot is too detailed for the hero. If you squeeze it into the right side of the hero, the text and panels become unreadable. Full-width is better because it shows this is real software, not just a mockup.
-
-Your current page already has a fake/simple app preview in the hero and then a workflow animation section, so the best order is:
-
-Hero → Trust strip → Real software screenshot → Workflow animation → Features
-
-That gives visitors:
-
-What it does
-
-Proof it exists
-
-How the workflow works
-
-Feature details
-
-I would title the section something like:
-
-See filepackR in action
-Review packet pages, assign document names, export organized PDFs, and audit records from one screen.
-
-Use the screenshot as a framed image, not a small card.
-
-One thing I would fix first: the Windows title bar says “PacketFlow” while the site is branded filepackR. That could confuse people. Either crop the very top title bar out or update the app title before using it.
-
-Best placement in your HTML: insert it after the trust section and before the current process-demo section. Your page already has the process-demo workflow animation there, so the screenshot fits naturally before it. 
-
-
-Suggested section copy:
-
-<section class="section" id="software-preview">
-  <div class="container">
-    <div class="section-head">
-      <span class="kicker">Software preview</span>
-      <h2>See filepackR in action.</h2>
-      <p>
-        Review packet pages, confirm document assignments, edit filenames,
-        export organized PDFs, and audit records from one focused screen.
-      </p>
-    </div>
-
-    <figure class="software-screenshot-frame">
-      <img
-        src="assets/filepackr-software-preview.jpg"
-        alt="filepackR software interface showing packet pages, document preview, assignment controls, and organized output PDFs"
-        loading="lazy"
-      />
-      <figcaption>
-        Example onboarding packet shown with sample data.
-      </figcaption>
-    </figure>
-  </div>
-</section>
-CSS:
-
-.software-screenshot-frame {
-  margin: 0;
-  overflow: hidden;
-  border: 1px solid var(--line);
-  border-radius: 24px;
-  background: white;
-  box-shadow: var(--shadow);
-}
-
-.software-screenshot-frame img {
-  display: block;
-  width: 100%;
-  height: auto;
-}
-
-.software-screenshot-frame figcaption {
-  padding: 12px 16px 16px;
-  color: #738198;
-  font-size: 13px;
-  text-align: center;
-}
-Use the image at about 1400px wide or 1600px wide, compressed as JPG/WebP. Don’t make it tiny. This is a credibility image, so it needs room.
-
-
-Thought for a few seconds
-On your site:
-
-Hero = the top main section of the homepage.
-
-It is the first big area visitors see. On your filepackR page, the hero is this part:
-
-Logo/nav at the top
-
-Big headline: “From messy paperwork to audit-ready records.”
-
-Main paragraph explaining filepackR
-
-Buttons like Explore features
-
-The small software-style graphic on the right
-
-Basically: the hero is the first sales pitch section.
-
-Trust strip = the small credibility bar right under the hero.
-
-On your page, it is the white box that says:
-
-“Built for teams that need every file routed correctly.”
-
-Then it lists:
-
-Onboarding
-
-Compliance
-
-Secure local processing
-
-Document-heavy operations
-
-Basically: the trust strip reassures people quickly that this is for serious business use.
-
-So when I said:
-
-Hero → Trust strip → Real software screenshot
-
-I meant:
-
-Top intro section → small credibility bar → your actual screenshot of the software.
-
-
-okay send the full file back to me with this
-
-Thought for 45s
-Done. I added the real software screenshot section after the trust strip and before the workflow animation, using your current homepage file. I also cropped the top Windows title bar so it does not show “PacketFlow.” 
-
-
-Download the full package here:
-
-Download updated filepackR homepage ZIP
-
-Individual files:
-
-index.html
-
-filepackr-software-preview.jpg
-
-Upload the image to:
-
-assets/filepackr-software-preview.jpg
-Then replace your homepage file with the updated index.html.
-
-
-
-no, i dont like that. I want just a small sized image somewhere else
-
-Thought for 1m 13s
-Got it. I changed it so the screenshot is small and placed inside the Simple Workflow section, next to the 3 workflow steps instead of being a big full-width section.
-
-Download the updated package:
-
-Download updated ZIP
-
-Individual files:
-
-index.html
-
-filepackr-software-preview-small.jpg
-
-Upload the image here:
-
-assets/filepackr-software-preview-small.jpg
-Then replace your homepage index.html with the updated one.
-
-This version is based on the homepage file you provided. 
-
-
-
-
-
 <!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="filepackR is intelligent file routing and document-processing software that uses OCR, configurable workflows, and local-first review to create cleaner, audit-ready records." />
+  <title>Intelligent File Routing &amp; Document Processing Software | filepackR</title>
+  <link rel="icon" type="image/svg+xml" href="assets/favicon.svg" />
+  <link rel="apple-touch-icon" href="assets/filepackr-icon.png" />
 
-<html lang="en"> <head> <meta charset="UTF-8" /> <meta name="viewport" content="width=device-width, initial-scale=1.0" /> <meta name="description" content="filepackR is intelligent file routing and document-processing software that uses OCR, configurable workflows, and local-first review to create cleaner, audit-ready records." /> <title>Intelligent File Routing &amp; Document Processing Software | filepackR</title> <link rel="icon" type="image/svg+xml" href="assets/favicon.svg" /> <link rel="apple-touch-icon" href="assets/filepackr-icon.png" />
+  <meta name="robots" content="index, follow, max-image-preview:large" />
+  <link rel="canonical" href="https://filepackr.com/" />
 
-<meta name="robots" content="index, follow, max-image-preview:large" /> <link rel="canonical" href="https://filepackr.com/" />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://filepackr.com/" />
+  <meta property="og:title" content="Intelligent File Routing &amp; Document Processing Software | filepackR" />
+  <meta property="og:description" content="Split, merge, organize, and route mixed PDF files through cleaner, audit-ready workflows with OCR-powered classification and customizable business rules." />
+  <meta property="og:image" content="https://filepackr.com/assets/filepackr-social-preview.png" />
 
-<meta property="og:type" content="website" /> <meta property="og:url" content="https://filepackr.com/" /> <meta property="og:title" content="Intelligent File Routing &amp; Document Processing Software | filepackR" /> <meta property="og:description" content="Split, merge, organize, and route mixed PDF files through cleaner, audit-ready workflows with OCR-powered classification and customizable business rules." /> <meta property="og:image" content="https://filepackr.com/assets/filepackr-social-preview.png" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Intelligent File Routing &amp; Document Processing Software | filepackR" />
+  <meta name="twitter:description" content="Split, merge, organize, and route mixed PDF files through cleaner, audit-ready workflows." />
+  <meta name="twitter:image" content="https://filepackr.com/assets/filepackr-social-preview.png" />
 
-<meta name="twitter:card" content="summary_large_image" /> <meta name="twitter:title" content="Intelligent File Routing &amp; Document Processing Software | filepackR" /> <meta name="twitter:description" content="Split, merge, organize, and route mixed PDF files through cleaner, audit-ready workflows." /> <meta name="twitter:image" content="https://filepackr.com/assets/filepackr-social-preview.png" />
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "WebSite",
+        "@id": "https://filepackr.com/#website",
+        "url": "https://filepackr.com/",
+        "name": "filepackR",
+        "alternateName": "filepackR Intelligent File Routing"
+      },
+      {
+        "@type": "Organization",
+        "@id": "https://filepackr.com/#organization",
+        "name": "filepackR",
+        "url": "https://filepackr.com/",
+        "logo": "https://filepackr.com/assets/filepackr-logo.png"
+      },
+      {
+        "@type": "SoftwareApplication",
+        "@id": "https://filepackr.com/#software",
+        "name": "filepackR",
+        "applicationCategory": "BusinessApplication",
+        "operatingSystem": "Windows",
+        "url": "https://filepackr.com/",
+        "description": "filepackR is PDF document-processing software for splitting, merging, combining, organizing, and routing mixed PDF files through configurable business workflows.",
+        "featureList": [
+          "PDF splitting and merging",
+          "OCR-powered PDF classification",
+          "Intelligent File Routing",
+          "Customizable document rules",
+          "Audit Center",
+          "Scan-quality checks",
+          "Local-first processing",
+          "Workflow-specific routing"
+        ]
+      }
+    ]
+  }
+  </script>
 
-<script type="application/ld+json"> { "@context": "https://schema.org", "@graph": [ { "@type": "WebSite", "@id": "https://filepackr.com/#website", "url": "https://filepackr.com/", "name": "filepackR", "alternateName": "filepackR Intelligent File Routing" }, { "@type": "Organization", "@id": "https://filepackr.com/#organization", "name": "filepackR", "url": "https://filepackr.com/", "logo": "https://filepackr.com/assets/filepackr-logo.png" }, { "@type": "SoftwareApplication", "@id": "https://filepackr.com/#software", "name": "filepackR", "applicationCategory": "BusinessApplication", "operatingSystem": "Windows", "url": "https://filepackr.com/", "description": "filepackR is PDF document-processing software for splitting, merging, combining, organizing, and routing mixed PDF files through configurable business workflows.", "featureList": [ "PDF splitting and merging", "OCR-powered PDF classification", "Intelligent File Routing", "Customizable document rules", "Audit Center", "Scan-quality checks", "Local-first processing", "Workflow-specific routing" ] } ] } </script>
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-WD8PKJ6Q10"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
 
-<!-- Google tag (gtag.js) -->
+    gtag('config', 'G-WD8PKJ6Q10');
 
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-WD8PKJ6Q10"></script>
+    window.trackFilepackREvent = function(name, params) {
+      gtag('event', name, params || {});
+    };
+  </script>
 
-<script> window.dataLayer = window.dataLayer || []; function gtag(){dataLayer.push(arguments);} gtag('js', new Date()); gtag('config', 'G-WD8PKJ6Q10'); window.trackFilepackREvent = function(name, params) { gtag('event', name, params || {}); }; </script>
+  <style>
+    :root {
+      --navy: #1a2744;
+      --navy-deep: #101a30;
+      --blue: #2563eb;
+      --blue-light: #eaf1ff;
+      --teal: #0f766e;
+      --teal-light: #e4f6f3;
+      --ink: #24324d;
+      --slate: #62708a;
+      --line: #dfe7f2;
+      --bg: #f7fafd;
+      --panel: #ffffff;
+      --shadow: 0 22px 48px rgba(26,39,68,.13);
+      --max: 1180px;
+    }
 
-<style> :root { --navy: #1a2744; --navy-deep: #101a30; --blue: #2563eb; --blue-light: #eaf1ff; --teal: #0f766e; --teal-light: #e4f6f3; --ink: #24324d; --slate: #62708a; --line: #dfe7f2; --bg: #f7fafd; --panel: #ffffff; --shadow: 0 22px 48px rgba(26,39,68,.13); --max: 1180px; } * { box-sizing: border-box; } html { scroll-behavior: smooth; } body { margin: 0; color: var(--navy); background: radial-gradient(circle at 93% 4%, rgba(37,99,235,.13), transparent 29rem), radial-gradient(circle at 7% 42%, rgba(15,118,110,.09), transparent 26rem), var(--bg); font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; line-height: 1.55; } a { color: inherit; text-decoration: none; } .container { width: min(calc(100% - 40px), var(--max)); margin: auto; } .nav { position: sticky; top: 0; z-index: 30; border-bottom: 1px solid rgba(223,231,242,.82); background: rgba(247,250,253,.88); backdrop-filter: blur(18px); } .nav-inner { min-height: 76px; display: flex; justify-content: space-between; align-items: center; gap: 24px; } .brand img { width: 255px; max-width: 52vw; display: block; } .nav-links { display: flex; align-items: center; gap: 28px; color: #4d5c74; font-size: 14px; font-weight: 760; } .nav-links a:hover { color: var(--blue); } .button { display: inline-flex; align-items: center; justify-content: center; gap: 9px; padding: 13px 19px; border-radius: 12px; border: 1px solid transparent; font-weight: 800; transition: .22s ease; } .button:hover { transform: translateY(-2px); } .button-primary { color: white; background: linear-gradient(135deg, var(--blue), #1e53cd); box-shadow: 0 10px 24px rgba(37,99,235,.25); } .button-primary:hover { box-shadow: 0 15px 30px rgba(37,99,235,.32); } .button-secondary { background: white; border-color: #cbd8e8; color: var(--navy); } .button-secondary:hover { border-color: var(--blue); color: var(--blue); } .hero { padding: 88px 0 68px; overflow: hidden; } .hero-grid { display: grid; grid-template-columns: 1.03fr .97fr; align-items: center; gap: 54px; } .eyebrow { display: inline-flex; align-items: center; gap: 9px; padding: 7px 12px; border-radius: 999px; color: var(--teal); background: var(--teal-light); font-size: 12px; font-weight: 900; letter-spacing: .1em; text-transform: uppercase; } .eyebrow::before { content: ""; width: 8px; height: 8px; border-radius: 50%; background: var(--teal); } h1, h2 { letter-spacing: -.065em; } h1 { max-width: 730px; margin: 20px 0 22px; font-size: clamp(3.25rem, 6vw, 5.8rem); line-height: .98; } h1 span { color: var(--blue); } .hero-copy { max-width: 680px; margin: 0 0 27px; color: #56657b; font-size: 1.17rem; } .hero-actions { display: flex; gap: 12px; flex-wrap: wrap; } .proof { display: flex; flex-wrap: wrap; gap: 22px; margin-top: 31px; color: #68768c; font-size: 13px; font-weight: 750; } .proof span { display: inline-flex; align-items: center; gap: 7px; } .proof i { display: grid; place-items: center; width: 20px; height: 20px; border-radius: 50%; color: var(--teal); background: #e3f6f2; font-style: normal; font-size: 11px; } .app-card { position: relative; overflow: hidden; padding: 18px; border: 1px solid var(--line); border-radius: 24px; background: white; box-shadow: var(--shadow); } .app-card::before { content: ""; position: absolute; right: -95px; top: -105px; width: 240px; height: 240px; border-radius: 50%; background: rgba(37,99,235,.1); } .window-bar { display: flex; align-items: center; gap: 7px; position: relative; padding-bottom: 14px; border-bottom: 1px solid #eef2f7; } .window-dot { width: 9px; height: 9px; border-radius: 50%; background: #d7e0eb; } .window-dot:nth-child(1) { background: #f59e0b; } .window-dot:nth-child(2) { background: #22c55e; } .window-dot:nth-child(3) { background: #60a5fa; } .window-title { margin-left: 8px; color: #66758b; font-size: 12px; font-weight: 850; } .app-layout { position: relative; display: grid; grid-template-columns: 1fr 1.08fr; gap: 13px; padding-top: 15px; } .app-panel { padding: 13px; border: 1px solid #e5edf6; border-radius: 14px; background: rgba(255,255,255,.91); } .app-panel h4 { margin: 0 0 10px; color: #748196; font-size: 10px; letter-spacing: .12em; text-transform: uppercase; } .file-row { display: flex; align-items: center; gap: 8px; padding: 8px 0; border-top: 1px solid #eef3f7; color: #475569; font-size: 11px; } .file-row:first-of-type { border-top: 0; } .file-icon { position: relative; width: 18px; height: 20px; border-radius: 4px; background: #dbeafe; } .file-icon::after { content: ""; position: absolute; left: 5px; top: 7px; width: 8px; height: 2px; background: #60a5fa; box-shadow: 0 4px #60a5fa; } .pill { margin-left: auto; padding: 3px 6px; border-radius: 999px; color: var(--teal); background: #e9f8f4; font-size: 9px; font-weight: 850; } .pill.blue { color: var(--blue); background: #eaf1ff; } .bar { height: 7px; margin: 11px 0 14px; overflow: hidden; border-radius: 999px; background: #e8eef6; } .bar span { display: block; width: 88%; height: 100%; border-radius: inherit; background: linear-gradient(90deg, var(--teal), var(--blue)); } .metrics { display: grid; grid-template-columns: repeat(2,1fr); gap: 9px; } .metric { padding: 11px; border-radius: 11px; background: #f7f9fc; } .metric strong { display: block; font-size: 1.35rem; letter-spacing: -.04em; } .metric small { color: #748196; font-size: 10px; font-weight: 720; } .trust { padding-bottom: 18px; } .trust-box { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 18px; padding: 18px 22px; border: 1px solid var(--line); border-radius: 16px; background: white; } .trust-box strong { font-size: 14px; } .trust-list { display: flex; flex-wrap: wrap; gap: 18px; color: #647289; font-size: 13px; font-weight: 780; } .section { padding: 62px 0; } .section-alt { border-top: 1px solid #e9eff6; border-bottom: 1px solid #e9eff6; background: white; } .section-head { max-width: 790px; margin-bottom: 38px; } .kicker { color: var(--teal); font-size: 12px; font-weight: 900; letter-spacing: .13em; text-transform: uppercase; } h2 { margin: 12px 0 13px; font-size: clamp(2rem,4vw,3.5rem); line-height: 1.06; } .section-head p { margin: 0; color: #647389; font-size: 1.07rem; } .features { display: grid; grid-template-columns: repeat(3,1fr); gap: 16px; } .feature { min-height: 172px; padding: 20px; border: 1px solid var(--line); border-radius: 17px; background: white; transition: .22s ease; display: grid; grid-template-columns: 40px 1fr; column-gap: 14px; align-content: start; } .feature:hover { transform: translateY(-4px); border-color: #c0d1e8; box-shadow: 0 16px 34px rgba(26,39,68,.09); } .feature-icon { display: grid; place-items: center; width: 40px; height: 40px; margin: 0; border-radius: 12px; color: var(--blue); background: var(--blue-light); font-size: 11px; font-weight: 900; grid-row: 1 / span 2; } .feature-icon.teal { color: var(--teal); background: var(--teal-light); } .feature h3 { margin: 1px 0 7px; font-size: 1.06rem; } .feature p { margin: 0; color: #69788d; font-size: .93rem; } .steps { display: grid; grid-template-columns: repeat(3,1fr); gap: 17px; } .step { padding: 24px; border: 1px solid var(--line); border-radius: 18px; background: white; } .step-number { display: grid; place-items: center; width: 34px; height: 34px; margin-bottom: 17px; border-radius: 10px; color: white; background: var(--navy); font-weight: 900; } .step h3 { margin: 0 0 8px; font-size: 1.12rem; } .step p { margin: 0; color: #69788d; font-size: .95rem; } .scale-grid { display: grid; grid-template-columns: .93fr 1.07fr; align-items: center; gap: 46px; } .scale-copy { margin: 0 0 22px; color: #647389; font-size: 1.06rem; } .scale-list { display: grid; gap: 12px; } .scale-item { display: flex; gap: 13px; padding: 15px; border: 1px solid var(--line); border-radius: 14px; background: white; } .check { display: grid; place-items: center; flex: 0 0 auto; width: 25px; height: 25px; border-radius: 50%; color: var(--teal); background: #e4f7f3; font-weight: 900; } .scale-item strong { display: block; margin-bottom: 2px; font-size: .96rem; } .scale-item p { margin: 0; color: #69788d; font-size: .9rem; } .value-card { padding: 31px; border-radius: 24px; color: white; background: linear-gradient(145deg, var(--navy), #10213f); box-shadow: var(--shadow); } .value-card p { margin: 0 0 22px; font-size: 1.35rem; line-height: 1.45; letter-spacing: -.025em; } .value-card small { color: #bdc9db; font-weight: 720; } .cta { padding: 62px 0; } .cta-box { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 26px; padding: 42px; border-radius: 25px; color: white; background: linear-gradient(135deg,#14233f,var(--navy)); box-shadow: var(--shadow); } .cta-box h2 { margin: 0 0 8px; font-size: clamp(2rem,4vw,3.15rem); } .cta-box p { max-width: 690px; margin: 0; color: #becbe0; } .cta-box .button-primary { color: var(--navy); background: white; box-shadow: none; } footer { padding: 25px 0 42px; color: #738198; font-size: 13px; } .footer-inner { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 17px; padding-top: 21px; border-top: 1px solid var(--line); } .footer-links { display: flex; gap: 18px; } @media (max-width: 900px) { .hero-grid, .scale-grid { grid-template-columns: 1fr; } .hero { padding-top: 58px; } .hero-visual { max-width: 650px; } .features { grid-template-columns: repeat(2,1fr); } .nav-links a:not(.button) { display: none; } } @media (max-width: 620px) { .container { width: min(calc(100% - 24px), var(--max)); } .brand img { width: 180px; } .nav-inner { min-height: 68px; gap: 10px; } .nav-links { gap: 0; } .nav-links .button { padding: 10px 11px; font-size: 12px; } h1 { font-size: 3.35rem; } .features, .steps, .app-layout { grid-template-columns: 1fr; } .feature { min-height: auto; grid-template-columns: 1fr; row-gap: 11px; padding: 18px; } .feature-icon { grid-row: auto; } .use-case-steps .step { grid-template-columns: 1fr; row-gap: 11px; min-height: auto; padding: 18px; } .use-case-steps .step-number { grid-row: auto; } .cta-box { padding: 28px; } } .process-demo { padding: 30px 0 44px; } .process-frame { overflow: hidden; border: 1px solid var(--line); border-radius: 24px; background: white; box-shadow: var(--shadow); } .process-frame img { display: block; width: 100%; height: auto; } .process-note { margin-top: 14px; color: #738198; font-size: 13px; text-align: center; } .inline-process-animation { display:block; width:100%; overflow:hidden; } .inline-process-animation img { display:block; width:100%; height:auto; } .use-case-steps .step { display: grid; grid-template-columns: 38px 1fr; column-gap: 14px; align-content: start; min-height: 178px; padding: 22px; } .use-case-steps .step-number { grid-row: 1 / span 2; width: 38px; height: 38px; margin: 0; border-radius: 11px; font-size: .95rem; } .use-case-steps .step h3 { margin: 2px 0 8px; } .use-case-steps .step p { margin: 0; } .demo-modal[hidden] { display: none; } .demo-modal { position: fixed; inset: 0; z-index: 100; display: grid; place-items: center; padding: 20px; background: rgba(16,26,48,.62); backdrop-filter: blur(6px); } .demo-modal-card { width: min(760px, 100%); max-height: min(92vh, 900px); overflow: auto; border: 1px solid var(--line); border-radius: 22px; background: white; box-shadow: 0 28px 72px rgba(16,26,48,.28); } .demo-modal-header { display: flex; align-items: flex-start; justify-content: space-between; gap: 18px; padding: 24px 24px 16px; border-bottom: 1px solid #eaf0f6; } .demo-modal-header h2 { margin: 4px 0 6px; font-size: clamp(1.75rem, 4vw, 2.35rem); } .demo-modal-header p { margin: 0; color: #647389; font-size: .96rem; } .demo-close { flex: 0 0 auto; width: 38px; height: 38px; border: 1px solid #d9e2ef; border-radius: 10px; background: white; color: var(--navy); font-size: 24px; line-height: 1; cursor: pointer; } .demo-close:hover { border-color: var(--blue); color: var(--blue); } .demo-form { display: grid; gap: 16px; padding: 22px 24px 24px; } .form-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 14px; } .form-field { display: grid; gap: 7px; } .form-field.full { grid-column: 1 / -1; } .form-field label { color: var(--navy); font-size: 13px; font-weight: 800; } .form-field input, .form-field select, .form-field textarea { width: 100%; border: 1px solid #cfd9e8; border-radius: 10px; background: white; color: var(--navy); padding: 12px 13px; font: inherit; outline: none; transition: .18s ease; } .form-field textarea { min-height: 128px; resize: vertical; } .form-field input:focus, .form-field select:focus, .form-field textarea:focus { border-color: var(--blue); box-shadow: 0 0 0 3px rgba(37,99,235,.12); } .details-toggle { display: inline-flex; align-items: center; gap: 7px; width: fit-content; border: 0; background: transparent; color: var(--blue); padding: 0; font-weight: 800; cursor: pointer; } .optional-details[hidden] { display: none; } .optional-details { display: grid; gap: 14px; padding-top: 2px; } .form-actions { display: flex; align-items: center; justify-content: space-between; gap: 14px; flex-wrap: wrap; padding-top: 3px; } .form-note { margin: 0; color: #738198; font-size: 12px; } .form-status { min-height: 20px; margin: 0; font-size: 13px; font-weight: 750; } .form-status.success { color: var(--teal); } .form-status.error { color: #b42318; } .honeypot { position: absolute !important; left: -9999px !important; width: 1px !important; height: 1px !important; opacity: 0 !important; pointer-events: none !important; } body.modal-open { overflow: hidden; } @media (max-width: 620px) { .demo-modal { padding: 10px; } .demo-modal-card { max-height: 96vh; border-radius: 16px; } .demo-modal-header { padding: 18px 17px 14px; } .demo-form { padding: 17px; } .form-grid { grid-template-columns: 1fr; } .form-field.full { grid-column: auto; } .form-actions { align-items: stretch; } .form-actions .button { width: 100%; } } /* Compact icon-and-text layouts */ .features .feature { min-height: 158px; display: grid; grid-template-columns: 40px 1fr; column-gap: 14px; align-content: start; padding: 19px; } .features .feature-icon { grid-row: 1 / span 2; width: 40px; height: 40px; margin: 0; } .features .feature h3 { margin: 1px 0 7px; } .features .feature p { margin: 0; } .steps .step { min-height: 156px; display: grid; grid-template-columns: 38px 1fr; column-gap: 14px; align-content: start; padding: 20px; } .steps .step-number { grid-row: 1 / span 2; width: 38px; height: 38px; margin: 0; border-radius: 11px; font-size: .95rem; } .steps .step h3 { margin: 2px 0 7px; } .steps .step p { margin: 0; } .scale-item { align-items: flex-start; gap: 13px; padding: 14px 15px; } .scale-item .check { margin-top: 1px; } @media (max-width: 620px) { .section { padding: 48px 0; } .process-demo { padding: 24px 0 36px; } .cta { padding: 48px 0; } .features .feature, .steps .step { min-height: auto; grid-template-columns: 38px 1fr; column-gap: 12px; padding: 17px; } .features .feature-icon, .steps .step-number { grid-row: 1 / span 2; width: 38px; height: 38px; } } .pdf-processing-link { margin: 20px 0 0; } .pdf-processing-link a { display: inline-flex; align-items: center; gap: 8px; color: var(--blue); font-weight: 850; } .pdf-processing-link a:hover { text-decoration: underline; } </style>
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      color: var(--navy);
+      background:
+        radial-gradient(circle at 93% 4%, rgba(37,99,235,.13), transparent 29rem),
+        radial-gradient(circle at 7% 42%, rgba(15,118,110,.09), transparent 26rem),
+        var(--bg);
+      font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      line-height: 1.55;
+    }
 
-</head> <body> <nav class="nav"> <div class="container nav-inner"> <a class="brand" href="#top" aria-label="filepackR home"> <img src="assets/filepackr-logo.png" alt="filepackR logo" /> </a> <div class="nav-links"> <a href="#demo">Demo</a> <a href="#features">Features</a> <a href="pdf-splitter-software/">PDF Splitter</a> <a href="privacy.html">Privacy</a> <a href="#workflow">Workflow</a> <a href="#value">Value</a> <a href="#scale">Scalability</a> <button class="button button-primary demo-trigger" type="button" data-source="Top navigation">Request a demo</button> </div> </div> </nav>
+    a { color: inherit; text-decoration: none; }
+    .container { width: min(calc(100% - 40px), var(--max)); margin: auto; }
 
-<main id="top"> <section class="hero"> <div class="container hero-grid"> <div> <span class="eyebrow">Intelligent document intake and routing</span> <h1>From messy paperwork to <span>audit-ready records.</span></h1> <p class="hero-copy"> With filepackR, businesses scan stacks of paper documents onto their desktop, and filepackR does the work someone would normally do by hand. It turns the scans into organized PDF files, names them, sorts them, combines or splits them when needed, and sends each file to the right place. Users define the rules and process flow in a simple setup, and filepackR handles the rest while flagging anything that still needs review.
+    .nav {
+      position: sticky;
+      top: 0;
+      z-index: 30;
+      border-bottom: 1px solid rgba(223,231,242,.82);
+      background: rgba(247,250,253,.88);
+      backdrop-filter: blur(18px);
+    }
+    .nav-inner {
+      min-height: 76px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 24px;
+    }
+    .brand img { width: 255px; max-width: 52vw; display: block; }
+    .nav-links { display: flex; align-items: center; gap: 28px; color: #4d5c74; font-size: 14px; font-weight: 760; }
+    .nav-links a:hover { color: var(--blue); }
+    .button {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 9px;
+      padding: 13px 19px;
+      border-radius: 12px;
+      border: 1px solid transparent;
+      font-weight: 800;
+      transition: .22s ease;
+    }
+    .button:hover { transform: translateY(-2px); }
+    .button-primary {
+      color: white;
+      background: linear-gradient(135deg, var(--blue), #1e53cd);
+      box-shadow: 0 10px 24px rgba(37,99,235,.25);
+    }
+    .button-primary:hover { box-shadow: 0 15px 30px rgba(37,99,235,.32); }
+    .button-secondary { background: white; border-color: #cbd8e8; color: var(--navy); }
+    .button-secondary:hover { border-color: var(--blue); color: var(--blue); }
 
-      </p>
-      <div class="hero-actions">
-        <a class="button button-secondary" href="#features">Explore features</a>
-      </div>
-      <div class="proof">
-        <span><i>✓</i> OCR-powered recognition</span>
-        <span><i>✓</i> Customizable routing</span>
-        <span><i>✓</i> Flexible, scalable workflows</span>
-        <span><i>✓</i> Local-first security</span>
-      </div>
+    .hero { padding: 88px 0 68px; overflow: hidden; }
+    .hero-grid { display: grid; grid-template-columns: 1.03fr .97fr; align-items: center; gap: 54px; }
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 9px;
+      padding: 7px 12px;
+      border-radius: 999px;
+      color: var(--teal);
+      background: var(--teal-light);
+      font-size: 12px;
+      font-weight: 900;
+      letter-spacing: .1em;
+      text-transform: uppercase;
+    }
+    .eyebrow::before {
+      content: "";
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: var(--teal);
+    }
+    h1, h2 { letter-spacing: -.065em; }
+    h1 {
+      max-width: 730px;
+      margin: 20px 0 22px;
+      font-size: clamp(3.25rem, 6vw, 5.8rem);
+      line-height: .98;
+    }
+    h1 span { color: var(--blue); }
+    .hero-copy {
+      max-width: 680px;
+      margin: 0 0 27px;
+      color: #56657b;
+      font-size: 1.17rem;
+    }
+    .hero-actions { display: flex; gap: 12px; flex-wrap: wrap; }
+    .proof {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 22px;
+      margin-top: 31px;
+      color: #68768c;
+      font-size: 13px;
+      font-weight: 750;
+    }
+    .proof span { display: inline-flex; align-items: center; gap: 7px; }
+    .proof i {
+      display: grid;
+      place-items: center;
+      width: 20px;
+      height: 20px;
+      border-radius: 50%;
+      color: var(--teal);
+      background: #e3f6f2;
+      font-style: normal;
+      font-size: 11px;
+    }
+
+    .app-card {
+      position: relative;
+      overflow: hidden;
+      padding: 18px;
+      border: 1px solid var(--line);
+      border-radius: 24px;
+      background: white;
+      box-shadow: var(--shadow);
+    }
+    .app-card::before {
+      content: "";
+      position: absolute;
+      right: -95px;
+      top: -105px;
+      width: 240px;
+      height: 240px;
+      border-radius: 50%;
+      background: rgba(37,99,235,.1);
+    }
+    .window-bar {
+      display: flex;
+      align-items: center;
+      gap: 7px;
+      position: relative;
+      padding-bottom: 14px;
+      border-bottom: 1px solid #eef2f7;
+    }
+    .window-dot { width: 9px; height: 9px; border-radius: 50%; background: #d7e0eb; }
+    .window-dot:nth-child(1) { background: #f59e0b; }
+    .window-dot:nth-child(2) { background: #22c55e; }
+    .window-dot:nth-child(3) { background: #60a5fa; }
+    .window-title { margin-left: 8px; color: #66758b; font-size: 12px; font-weight: 850; }
+    .app-layout { position: relative; display: grid; grid-template-columns: 1fr 1.08fr; gap: 13px; padding-top: 15px; }
+    .app-panel { padding: 13px; border: 1px solid #e5edf6; border-radius: 14px; background: rgba(255,255,255,.91); }
+    .app-panel h4 { margin: 0 0 10px; color: #748196; font-size: 10px; letter-spacing: .12em; text-transform: uppercase; }
+    .file-row { display: flex; align-items: center; gap: 8px; padding: 8px 0; border-top: 1px solid #eef3f7; color: #475569; font-size: 11px; }
+    .file-row:first-of-type { border-top: 0; }
+    .file-icon { position: relative; width: 18px; height: 20px; border-radius: 4px; background: #dbeafe; }
+    .file-icon::after { content: ""; position: absolute; left: 5px; top: 7px; width: 8px; height: 2px; background: #60a5fa; box-shadow: 0 4px #60a5fa; }
+    .pill { margin-left: auto; padding: 3px 6px; border-radius: 999px; color: var(--teal); background: #e9f8f4; font-size: 9px; font-weight: 850; }
+    .pill.blue { color: var(--blue); background: #eaf1ff; }
+    .bar { height: 7px; margin: 11px 0 14px; overflow: hidden; border-radius: 999px; background: #e8eef6; }
+    .bar span { display: block; width: 88%; height: 100%; border-radius: inherit; background: linear-gradient(90deg, var(--teal), var(--blue)); }
+    .metrics { display: grid; grid-template-columns: repeat(2,1fr); gap: 9px; }
+    .metric { padding: 11px; border-radius: 11px; background: #f7f9fc; }
+    .metric strong { display: block; font-size: 1.35rem; letter-spacing: -.04em; }
+    .metric small { color: #748196; font-size: 10px; font-weight: 720; }
+
+    .trust { padding-bottom: 18px; }
+    .trust-box {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: space-between;
+      gap: 18px;
+      padding: 18px 22px;
+      border: 1px solid var(--line);
+      border-radius: 16px;
+      background: white;
+    }
+    .trust-box strong { font-size: 14px; }
+    .trust-list { display: flex; flex-wrap: wrap; gap: 18px; color: #647289; font-size: 13px; font-weight: 780; }
+
+    .section { padding: 62px 0; }
+    .section-alt { border-top: 1px solid #e9eff6; border-bottom: 1px solid #e9eff6; background: white; }
+    .section-head { max-width: 790px; margin-bottom: 38px; }
+    .kicker { color: var(--teal); font-size: 12px; font-weight: 900; letter-spacing: .13em; text-transform: uppercase; }
+    h2 { margin: 12px 0 13px; font-size: clamp(2rem,4vw,3.5rem); line-height: 1.06; }
+    .section-head p { margin: 0; color: #647389; font-size: 1.07rem; }
+
+    .features { display: grid; grid-template-columns: repeat(3,1fr); gap: 16px; }
+    .feature {
+      min-height: 172px;
+      padding: 20px;
+      border: 1px solid var(--line);
+      border-radius: 17px;
+      background: white;
+      transition: .22s ease;
+      display: grid;
+      grid-template-columns: 40px 1fr;
+      column-gap: 14px;
+      align-content: start;
+    }
+    .feature:hover { transform: translateY(-4px); border-color: #c0d1e8; box-shadow: 0 16px 34px rgba(26,39,68,.09); }
+    .feature-icon {
+      display: grid;
+      place-items: center;
+      width: 40px;
+      height: 40px;
+      margin: 0;
+      border-radius: 12px;
+      color: var(--blue);
+      background: var(--blue-light);
+      font-size: 11px;
+      font-weight: 900;
+      grid-row: 1 / span 2;
+    }
+    .feature-icon.teal { color: var(--teal); background: var(--teal-light); }
+    .feature h3 { margin: 1px 0 7px; font-size: 1.06rem; }
+    .feature p { margin: 0; color: #69788d; font-size: .93rem; }
+
+    .steps { display: grid; grid-template-columns: repeat(3,1fr); gap: 17px; }
+    .step { padding: 24px; border: 1px solid var(--line); border-radius: 18px; background: white; }
+    .step-number { display: grid; place-items: center; width: 34px; height: 34px; margin-bottom: 17px; border-radius: 10px; color: white; background: var(--navy); font-weight: 900; }
+    .step h3 { margin: 0 0 8px; font-size: 1.12rem; }
+    .step p { margin: 0; color: #69788d; font-size: .95rem; }
+
+    .scale-grid { display: grid; grid-template-columns: .93fr 1.07fr; align-items: center; gap: 46px; }
+    .scale-copy { margin: 0 0 22px; color: #647389; font-size: 1.06rem; }
+    .scale-list { display: grid; gap: 12px; }
+    .scale-item { display: flex; gap: 13px; padding: 15px; border: 1px solid var(--line); border-radius: 14px; background: white; }
+    .check { display: grid; place-items: center; flex: 0 0 auto; width: 25px; height: 25px; border-radius: 50%; color: var(--teal); background: #e4f7f3; font-weight: 900; }
+    .scale-item strong { display: block; margin-bottom: 2px; font-size: .96rem; }
+    .scale-item p { margin: 0; color: #69788d; font-size: .9rem; }
+
+    .value-card {
+      padding: 31px;
+      border-radius: 24px;
+      color: white;
+      background: linear-gradient(145deg, var(--navy), #10213f);
+      box-shadow: var(--shadow);
+    }
+    .value-card p { margin: 0 0 22px; font-size: 1.35rem; line-height: 1.45; letter-spacing: -.025em; }
+    .value-card small { color: #bdc9db; font-weight: 720; }
+
+    .cta { padding: 62px 0; }
+    .cta-box {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: space-between;
+      gap: 26px;
+      padding: 42px;
+      border-radius: 25px;
+      color: white;
+      background: linear-gradient(135deg,#14233f,var(--navy));
+      box-shadow: var(--shadow);
+    }
+    .cta-box h2 { margin: 0 0 8px; font-size: clamp(2rem,4vw,3.15rem); }
+    .cta-box p { max-width: 690px; margin: 0; color: #becbe0; }
+    .cta-box .button-primary { color: var(--navy); background: white; box-shadow: none; }
+
+    footer { padding: 25px 0 42px; color: #738198; font-size: 13px; }
+    .footer-inner { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 17px; padding-top: 21px; border-top: 1px solid var(--line); }
+    .footer-links { display: flex; gap: 18px; }
+
+    @media (max-width: 900px) {
+      .hero-grid, .scale-grid { grid-template-columns: 1fr; }
+      .hero { padding-top: 58px; }
+      .hero-visual { max-width: 650px; }
+      .features { grid-template-columns: repeat(2,1fr); }
+      .nav-links a:not(.button) { display: none; }
+    }
+    @media (max-width: 620px) {
+      .container { width: min(calc(100% - 24px), var(--max)); }
+      .brand img { width: 180px; }
+      .nav-inner { min-height: 68px; gap: 10px; }
+      .nav-links { gap: 0; }
+      .nav-links .button { padding: 10px 11px; font-size: 12px; }
+      h1 { font-size: 3.35rem; }
+      .features, .steps, .app-layout { grid-template-columns: 1fr; }
+
+      .feature {
+        min-height: auto;
+        grid-template-columns: 1fr;
+        row-gap: 11px;
+        padding: 18px;
+      }
+      .feature-icon {
+        grid-row: auto;
+      }
+
+      .use-case-steps .step {
+        grid-template-columns: 1fr;
+        row-gap: 11px;
+        min-height: auto;
+        padding: 18px;
+      }
+      .use-case-steps .step-number {
+        grid-row: auto;
+      }
+
+      .cta-box { padding: 28px; }
+    }
+  
+  
+    .process-demo { padding: 30px 0 44px; }
+    .process-frame {
+      overflow: hidden;
+      border: 1px solid var(--line);
+      border-radius: 24px;
+      background: white;
+      box-shadow: var(--shadow);
+    }
+    .process-frame img { display: block; width: 100%; height: auto; }
+    .process-note { margin-top: 14px; color: #738198; font-size: 13px; text-align: center; }
+  
+    .inline-process-animation { display:block; width:100%; overflow:hidden; }
+    .inline-process-animation img { display:block; width:100%; height:auto; }
+
+  
+    .use-case-steps .step {
+      display: grid;
+      grid-template-columns: 38px 1fr;
+      column-gap: 14px;
+      align-content: start;
+      min-height: 178px;
+      padding: 22px;
+    }
+    .use-case-steps .step-number {
+      grid-row: 1 / span 2;
+      width: 38px;
+      height: 38px;
+      margin: 0;
+      border-radius: 11px;
+      font-size: .95rem;
+    }
+    .use-case-steps .step h3 {
+      margin: 2px 0 8px;
+    }
+    .use-case-steps .step p {
+      margin: 0;
+    }
+
+  
+    .demo-modal[hidden] { display: none; }
+    .demo-modal {
+      position: fixed; inset: 0; z-index: 100;
+      display: grid; place-items: center; padding: 20px;
+      background: rgba(16,26,48,.62); backdrop-filter: blur(6px);
+    }
+    .demo-modal-card {
+      width: min(760px, 100%); max-height: min(92vh, 900px); overflow: auto;
+      border: 1px solid var(--line); border-radius: 22px; background: white;
+      box-shadow: 0 28px 72px rgba(16,26,48,.28);
+    }
+    .demo-modal-header {
+      display: flex; align-items: flex-start; justify-content: space-between; gap: 18px;
+      padding: 24px 24px 16px; border-bottom: 1px solid #eaf0f6;
+    }
+    .demo-modal-header h2 { margin: 4px 0 6px; font-size: clamp(1.75rem, 4vw, 2.35rem); }
+    .demo-modal-header p { margin: 0; color: #647389; font-size: .96rem; }
+    .demo-close {
+      flex: 0 0 auto; width: 38px; height: 38px; border: 1px solid #d9e2ef;
+      border-radius: 10px; background: white; color: var(--navy); font-size: 24px;
+      line-height: 1; cursor: pointer;
+    }
+    .demo-close:hover { border-color: var(--blue); color: var(--blue); }
+    .demo-form { display: grid; gap: 16px; padding: 22px 24px 24px; }
+    .form-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 14px; }
+    .form-field { display: grid; gap: 7px; }
+    .form-field.full { grid-column: 1 / -1; }
+    .form-field label { color: var(--navy); font-size: 13px; font-weight: 800; }
+    .form-field input, .form-field select, .form-field textarea {
+      width: 100%; border: 1px solid #cfd9e8; border-radius: 10px; background: white;
+      color: var(--navy); padding: 12px 13px; font: inherit; outline: none; transition: .18s ease;
+    }
+    .form-field textarea { min-height: 128px; resize: vertical; }
+    .form-field input:focus, .form-field select:focus, .form-field textarea:focus {
+      border-color: var(--blue); box-shadow: 0 0 0 3px rgba(37,99,235,.12);
+    }
+    .details-toggle {
+      display: inline-flex; align-items: center; gap: 7px; width: fit-content;
+      border: 0; background: transparent; color: var(--blue); padding: 0;
+      font-weight: 800; cursor: pointer;
+    }
+    .optional-details[hidden] { display: none; }
+    .optional-details { display: grid; gap: 14px; padding-top: 2px; }
+    .form-actions {
+      display: flex; align-items: center; justify-content: space-between;
+      gap: 14px; flex-wrap: wrap; padding-top: 3px;
+    }
+    .form-note { margin: 0; color: #738198; font-size: 12px; }
+    .form-status { min-height: 20px; margin: 0; font-size: 13px; font-weight: 750; }
+    .form-status.success { color: var(--teal); }
+    .form-status.error { color: #b42318; }
+    .honeypot {
+      position: absolute !important; left: -9999px !important; width: 1px !important;
+      height: 1px !important; opacity: 0 !important; pointer-events: none !important;
+    }
+    body.modal-open { overflow: hidden; }
+    @media (max-width: 620px) {
+      .demo-modal { padding: 10px; }
+      .demo-modal-card { max-height: 96vh; border-radius: 16px; }
+      .demo-modal-header { padding: 18px 17px 14px; }
+      .demo-form { padding: 17px; }
+      .form-grid { grid-template-columns: 1fr; }
+      .form-field.full { grid-column: auto; }
+      .form-actions { align-items: stretch; }
+      .form-actions .button { width: 100%; }
+    }
+
+  
+    /* Compact icon-and-text layouts */
+    .features .feature {
+      min-height: 158px;
+      display: grid;
+      grid-template-columns: 40px 1fr;
+      column-gap: 14px;
+      align-content: start;
+      padding: 19px;
+    }
+    .features .feature-icon {
+      grid-row: 1 / span 2;
+      width: 40px;
+      height: 40px;
+      margin: 0;
+    }
+    .features .feature h3 { margin: 1px 0 7px; }
+    .features .feature p { margin: 0; }
+
+    .steps .step {
+      min-height: 156px;
+      display: grid;
+      grid-template-columns: 38px 1fr;
+      column-gap: 14px;
+      align-content: start;
+      padding: 20px;
+    }
+    .steps .step-number {
+      grid-row: 1 / span 2;
+      width: 38px;
+      height: 38px;
+      margin: 0;
+      border-radius: 11px;
+      font-size: .95rem;
+    }
+    .steps .step h3 { margin: 2px 0 7px; }
+    .steps .step p { margin: 0; }
+
+    .scale-item {
+      align-items: flex-start;
+      gap: 13px;
+      padding: 14px 15px;
+    }
+    .scale-item .check { margin-top: 1px; }
+
+    @media (max-width: 620px) {
+      .section { padding: 48px 0; }
+      .process-demo { padding: 24px 0 36px; }
+      .cta { padding: 48px 0; }
+
+      .features .feature,
+      .steps .step {
+        min-height: auto;
+        grid-template-columns: 38px 1fr;
+        column-gap: 12px;
+        padding: 17px;
+      }
+      .features .feature-icon,
+      .steps .step-number {
+        grid-row: 1 / span 2;
+        width: 38px;
+        height: 38px;
+      }
+    }
+
+  
+    .pdf-processing-link { margin: 20px 0 0; }
+    .pdf-processing-link a {
+      display: inline-flex; align-items: center; gap: 8px;
+      color: var(--blue); font-weight: 850;
+    }
+    .pdf-processing-link a:hover { text-decoration: underline; }
+  </style>
+</head>
+<body>
+  <nav class="nav">
+    <div class="container nav-inner">
+      <a class="brand" href="#top" aria-label="filepackR home">
+        <img src="assets/filepackr-logo.png" alt="filepackR logo" />
+      </a>
+      <div class="nav-links">
+        <a href="#demo">Demo</a>
+        <a href="#features">Features</a>
+        <a href="pdf-splitter-software/">PDF Splitter</a>
+        <a href="privacy.html">Privacy</a>
+        <a href="#workflow">Workflow</a>
+        <a href="#value">Value</a>
+        <a href="#scale">Scalability</a>
+        <button class="button button-primary demo-trigger" type="button" data-source="Top navigation">Request a demo</button>
+            </div>
     </div>
+  </nav>
 
-    <div class="hero-visual">
-      <div class="app-card">
-        <div class="window-bar">
-          <div class="window-dot"></div>
-          <div class="window-dot"></div>
-          <div class="window-dot"></div>
-          <span class="window-title">filepackR Intake Processor</span>
-        </div>
-        <div class="app-layout">
-          <div class="app-panel">
-            <h4>Document assignments</h4>
-            <div class="file-row"><span class="file-icon"></span><span>Application</span><span class="pill">Ready</span></div>
-            <div class="file-row"><span class="file-icon"></span><span>I-9 Verification</span><span class="pill">Ready</span></div>
-            <div class="file-row"><span class="file-icon"></span><span>Payroll</span><span class="pill blue">Review</span></div>
-            <div class="file-row"><span class="file-icon"></span><span>Authorization Forms</span><span class="pill blue">Review</span></div>
-	<div class="file-row"><span class="file-icon"></span><span>Signed Documents</span><span class="pill">Ready</span></div>
-	<div class="file-row"><span class="file-icon"></span><span>Legal Documents</span><span class="pill blue">Review</span></div>
-	<div class="file-row"><span class="file-icon"></span><span>Team Collaboration</span><span class="pill">Ready</span></div>
-	<div class="file-row"><span class="file-icon"></span><span>Case Summary</span><span class="pill">Ready</span></div>
+  <main id="top">
+    <section class="hero">
+      <div class="container hero-grid">
+        <div>
+          <span class="eyebrow">Intelligent document intake and routing</span>
+          <h1>From messy paperwork to <span>audit-ready records.</span></h1>
+          <p class="hero-copy">
+          With filepackR, businesses scan stacks of paper documents onto their desktop, and filepackR does the work someone would normally do by hand. It turns the scans into organized PDF files, names them, sorts them, combines or splits them when needed, and sends each file to the right place. Users define the rules and process flow in a simple setup, and filepackR handles the rest while flagging anything that still needs review.
+
+          </p>
+          <div class="hero-actions">
+            <a class="button button-secondary" href="#features">Explore features</a>
           </div>
-          <div class="app-panel">
-            <h4>Processing status</h4>
-            <strong style="font-size:14px">Packet analyzed</strong>
-            <div class="bar"><span></span></div>
-            <div class="metrics">
-              <div class="metric"><strong>24</strong><small>Pages analyzed</small></div>
-              <div class="metric"><strong>9</strong><small>PDFs prepared</small></div>
-              <div class="metric"><strong>3</strong><small>Needs review</small></div>
-              <div class="metric"><strong>88%</strong><small>Complete</small></div>
+          <div class="proof">
+            <span><i>✓</i> OCR-powered recognition</span>
+            <span><i>✓</i> Customizable routing</span>
+            <span><i>✓</i> Flexible, scalable workflows</span>
+            <span><i>✓</i> Local-first security</span>
+          </div>
+        </div>
+
+        <div class="hero-visual">
+          <div class="app-card">
+            <div class="window-bar">
+              <div class="window-dot"></div>
+              <div class="window-dot"></div>
+              <div class="window-dot"></div>
+              <span class="window-title">filepackR Intake Processor</span>
+            </div>
+            <div class="app-layout">
+              <div class="app-panel">
+                <h4>Document assignments</h4>
+                <div class="file-row"><span class="file-icon"></span><span>Application</span><span class="pill">Ready</span></div>
+                <div class="file-row"><span class="file-icon"></span><span>I-9 Verification</span><span class="pill">Ready</span></div>
+                <div class="file-row"><span class="file-icon"></span><span>Payroll</span><span class="pill blue">Review</span></div>
+                <div class="file-row"><span class="file-icon"></span><span>Authorization Forms</span><span class="pill blue">Review</span></div>
+		<div class="file-row"><span class="file-icon"></span><span>Signed Documents</span><span class="pill">Ready</span></div>
+		<div class="file-row"><span class="file-icon"></span><span>Legal Documents</span><span class="pill blue">Review</span></div>
+		<div class="file-row"><span class="file-icon"></span><span>Team Collaboration</span><span class="pill">Ready</span></div>
+		<div class="file-row"><span class="file-icon"></span><span>Case Summary</span><span class="pill">Ready</span></div>
+              </div>
+              <div class="app-panel">
+                <h4>Processing status</h4>
+                <strong style="font-size:14px">Packet analyzed</strong>
+                <div class="bar"><span></span></div>
+                <div class="metrics">
+                  <div class="metric"><strong>24</strong><small>Pages analyzed</small></div>
+                  <div class="metric"><strong>9</strong><small>PDFs prepared</small></div>
+                  <div class="metric"><strong>3</strong><small>Needs review</small></div>
+                  <div class="metric"><strong>88%</strong><small>Complete</small></div>
+                </div>
+              </div>
             </div>
           </div>
         </div>
       </div>
-    </div>
-  </div>
-</section>
+    </section>
 
-<section class="trust">
-  <div class="container trust-box">
-    <strong>Built for teams that need every file routed correctly.</strong>
-    <div class="trust-list">
-      <span>✓ Onboarding</span>
-      <span>✓ Compliance</span>
-      <span>✓ Secure local processing</span>
-      <span>✓ Document-heavy operations</span>
-    </div>
-  </div>
-</section>
-
-
-
-
-<section class="process-demo" id="demo">
-  <div class="container">
-    <div class="section-head">
-      <span class="kicker">See the workflow</span>
-      <h2>One mixed packet in. Organized, audit-ready records out.</h2>
-      <p>filepackR combines OCR, configurable document rules, quality review, and folder auditing into a single repeatable process.</p>
-    </div>
-    <div class="process-frame">
-      <div class="inline-process-animation"><img src="assets/filepackr-process-animation.svg" alt="Animated filepackR workflow showing packet intake, OCR analysis, smart routing, review, and audit-ready output" /></div>
-    </div>
-  </div>
-</section>
-
-<section class="section section-alt" id="features">
-  <div class="container">
-    <div class="section-head">
-      <span class="kicker">Powered by IFR</span>
-      <h2>More than a PDF splitter. A smarter routing workflow.</h2>
-      <p>filepackR combines classification, intelligent routing, quality control, audit tools, and configurable business rules in one focused desktop application.</p>
-    </div>
-
-    <div class="features">
-      <article class="feature">
-        <div class="feature-icon">01</div>
-        <h3>PDF splitting, merging, and organization</h3>
-        <p>Split mixed PDF packets into separate documents, combine related pages, merge supporting records, and apply consistent filenames automatically.</p>
-      </article>
-      <article class="feature">
-        <div class="feature-icon teal">02</div>
-        <h3>IFR-powered document routing</h3>
-        <p>Use OCR and customizable rules to identify PDF documents and route organized records through the workflows that keep your business moving.</p>
-      </article>
-      <article class="feature">
-        <div class="feature-icon">03</div>
-        <h3>Audit Center</h3>
-        <p>Inspect routed folders for missing, duplicate, incomplete, or corrupt files and manage routing exceptions from one focused queue.</p>
-      </article>
-      <article class="feature">
-        <div class="feature-icon teal">04</div>
-        <h3>Scan-quality pre-flight</h3>
-        <p>Flag blurry, dark, clipped, skewed, low-resolution, or suspicious pages before poor scans become permanent records.</p>
-      </article>
-      <article class="feature">
-        <div class="feature-icon">05</div>
-        <h3>Email and background-check routing</h3>
-        <p>Connect Outlook workflows to identify certain emails and documents, route them into the correct folders on your drive, and surface uncertain matches.</p>
-      </article>
-      <article class="feature">
-        <div class="feature-icon teal">06</div>
-        <h3>Packet history</h3>
-        <p>Search metadata-only activity history, review audits and exports, open destination folders, and export filtered CSV summaries.</p>
-      </article>
-
-      <article class="feature">
-        <div class="feature-icon">07</div>
-        <h3>Custom routing solutions</h3>
-        <p>Need a specialized workflow? We can tailor filepackR around your goals, document types, folder structure, routing logic, review process, and operational requirements.</p>
-      </article>
-    </div>
-  </div>
-</section>
-
-<section class="section" id="workflow">
-  <div class="container">
-    <div class="section-head">
-      <span class="kicker">Simple workflow</span>
-      <h2>Process complex paperwork without a complicated process.</h2>
-      <p>filepackR is designed to classify, route, and organize files without forcing office staff to become technical users.</p>
-    </div>
-    <div class="steps">
-      <article class="step">
-        <div class="step-number">1</div>
-        <h3>Open or scan a packet</h3>
-        <p>Load a combined packet. filepackR analyzes pages locally, detects likely document types, and prepares each file for routing.</p>
-      </article>
-      <article class="step">
-        <div class="step-number">2</div>
-        <h3>Review the routing</h3>
-        <p>Confirm assignments, change filenames, resolve uncertain routing decisions, and review quality alerts before the packet is finalized.</p>
-      </article>
-      <article class="step">
-        <div class="step-number">3</div>
-        <h3>Route organized records</h3>
-        <p>Create clean PDFs with consistent filenames, route them into the correct folders, and audit records later to catch missing or incomplete documents.</p>
-      </article>
-    </div>
-  </div>
-</section>
-
-<section class="section section-alt" id="scale">
-  <div class="container scale-grid">
-    <div>
-      <span class="kicker">Built to scale</span>
-      <h2>A flexible foundation for repeatable document routing.</h2>
-      <p class="scale-copy">
-        Start with employee onboarding. Expand into additional packet types, document libraries, operational teams, and compliance workflows as your organization grows. filepackR is designed to adapt its routing around your existing process instead of forcing your team into a rigid one-size-fits-all system.
-      </p>
-      <div class="scale-list">
-        <div class="scale-item">
-          <span class="check">✓</span>
-          <div><strong>Configurable checklists</strong><p>Define the documents that are required, optional, conditional, or expected later for each workflow.</p></div>
-        </div>
-        <div class="scale-item">
-          <span class="check">✓</span>
-          <div><strong>Routing rules that evolve</strong><p>Add recognition phrases, edit built-in logic with safeguards, preserve preferred names, and refine how documents are routed over time.</p></div>
-        </div>
-
-        <div class="scale-item">
-          <span class="check">✓</span>
-          <div><strong>Tailored routing solutions</strong><p>We can adapt filepackR to your goals, document types, folder structure, internal rules, destinations, and review workflow.</p></div>
-        </div>
-        <div class="scale-item">
-          <span class="check">✓</span>
-          <div><strong>Local-first control</strong><p>Keep sensitive files in your existing folders while filepackR manages metadata and workflow state locally.</p></div>
-        </div>
-
-      <div class="scale-item">
-        <span class="check">R</span>
-        <div><strong>Why the final R?</strong><p>The R stands for routing. filepackR is built around IFR, or Intelligent File Routing, to identify, organize, and route files according to the way your business works.</p></div>
-      </div>
-      </div>
-    </div>
-
-    <aside class="value-card">
-      <p>“The real value is not just faster filing. It is knowing the packet was organized consistently, reviewed, and checked before missing paperwork becomes a problem.”</p>
-      <small>Built for document-heavy onboarding and compliance workflows</small>
-    </aside>
-  </div>
-</section>
-
-
-
-<section class="section section-alt" id="pdf-processing">
-  <div class="container">
-    <div class="section-head">
-      <span class="kicker">PDF document processing</span>
-      <h2>Split, combine, merge, organize, and route PDFs in one workflow.</h2>
-      <p>filepackR goes beyond basic PDF splitting. It helps teams turn mixed PDF files into consistently named records, combine related pages, route documents into the right workflows, and flag exceptions before they become operational problems.</p>
-    <p class="pdf-processing-link">
-      <a href="pdf-splitter-software/">Learn more about PDF splitter and merger software <span aria-hidden="true">→</span></a>
-    </p>
-    </div>
-    <div class="steps">
-      <article class="step">
-        <div class="step-number">01</div>
-        <h3>Split mixed PDF files</h3>
-        <p>Separate large scanned packets into individual documents without manually rebuilding every file one page at a time.</p>
-      </article>
-      <article class="step">
-        <div class="step-number">02</div>
-        <h3>Merge related pages</h3>
-        <p>Combine supporting pages into the correct record so multi-page documents remain complete and easy to audit.</p>
-      </article>
-      <article class="step">
-        <div class="step-number">03</div>
-        <h3>Route organized records</h3>
-        <p>Use configurable workflows to route documents where they belong and surface items that need review or follow-up.</p>
-      </article>
-    </div>
-  </div>
-</section>
-
-
-<section class="section" id="value">
-  <div class="container">
-    <div class="section-head">
-      <span class="kicker">Why filepackR matters</span>
-      <h2>Move from manual filing to intelligent document routing.</h2>
-      <p>Document processing is rarely difficult because of one large task. The real cost comes from dozens of small manual steps repeated across every packet. filepackR turns those steps into a repeatable routing workflow.</p>
-    </div>
-    <div class="features">
-      <article class="feature">
-        <div class="feature-icon">TIME</div>
-        <h3>Save administrative time</h3>
-        <p>Reduce the repetitive work of separating scans, naming files, moving PDFs, and manually checking folders one document at a time.</p>
-      </article>
-      <article class="feature">
-        <div class="feature-icon teal">ERR</div>
-        <h3>Reduce preventable errors</h3>
-        <p>Apply consistent rules and filenames so missing files, duplicates, poor scans, and misfiled documents are easier to catch before they create problems.</p>
-      </article>
-      <article class="feature">
-        <div class="feature-icon">AUDIT</div>
-        <h3>Stay audit-ready</h3>
-        <p>Turn folder reviews into a repeatable process with targeted audits, checklist-aware findings, and a focused queue for items requiring attention.</p>
-      </article>
-      <article class="feature">
-        <div class="feature-icon teal">LOCAL</div>
-        <h3>Keep control of sensitive files</h3>
-        <p>Process records locally and keep documents in your existing Windows folders instead of relying on a cloud upload workflow for routine classification.</p>
-      </article>
-      <article class="feature">
-        <div class="feature-icon">OPS</div>
-        <h3>Standardize routing operations</h3>
-        <p>Capture naming conventions, recognition logic, routing rules, checklists, and review steps inside the software so the process does not depend on one experienced employee.</p>
-      </article>
-      <article class="feature">
-        <div class="feature-icon teal">FOCUS</div>
-        <h3>Focus staff on exceptions</h3>
-        <p>Let the application handle repeatable work while staff concentrate on the smaller number of items that genuinely need judgment or follow-up.</p>
-      </article>
-    </div>
-  </div>
-</section>
-
-<section class="section section-alt" id="use-cases">
-  <div class="container">
-    <div class="section-head">
-      <span class="kicker">Built for real operations</span>
-      <h2>Useful anywhere document packets need to be identified, checked, and routed consistently.</h2>
-      <p>filepackR started with onboarding and compliance-heavy personnel files, but the same routing model can support many other records-based processes.</p>
-    </div>
-    <div class="steps use-case-steps">
-      <article class="step">
-        <div class="step-number">01</div>
-        <h3>Employee onboarding</h3>
-        <p>Organize hiring packets, acknowledgments, payroll records, background-check documents, and supporting forms.</p>
-      </article>
-      <article class="step">
-        <div class="step-number">02</div>
-        <h3>Credentialing and compliance</h3>
-        <p>Track recurring requirements, expected-later documents, annual updates, and folders that need follow-up.</p>
-      </article>
-      <article class="step">
-        <div class="step-number">03</div>
-        <h3>Client and case intake</h3>
-        <p>Adapt the same rules-based routing system to other packet types where consistent naming, folder placement, and audit readiness matter.</p>
-      </article>
-    </div>
-  </div>
-</section>
-
-<section class="section" id="security">
-  <div class="container scale-grid">
-    <div>
-      <span class="kicker">Local-first security</span>
-      <h2>Route files intelligently without giving up control of your records.</h2>
-      <p class="scale-copy">filepackR is designed for organizations that handle sensitive paperwork and want practical routing automation while reducing the risk of sending sensitive documents through unsecured cloud workflows.</p>
-      <div class="scale-list">
-        <div class="scale-item">
-          <span class="check">✓</span>
-          <div><strong>Route files into your existing folders</strong><p>Continue using the Windows folder structure your team already understands while filepackR routes records into the right destinations.</p></div>
-        </div>
-        <div class="scale-item">
-          <span class="check">✓</span>
-          <div><strong>Local document analysis</strong><p>OCR classification and packet review can run on multiple workstations where the application is installed.</p></div>
-        </div>
-        <div class="scale-item">
-          <span class="check">✓</span>
-          <div><strong>Metadata-only activity history</strong><p>Track operational activity without storing OCR text, email bodies, or scanned-document contents in the history view.</p></div>
+    <section class="trust">
+      <div class="container trust-box">
+        <strong>Built for teams that need every file routed correctly.</strong>
+        <div class="trust-list">
+          <span>✓ Onboarding</span>
+          <span>✓ Compliance</span>
+          <span>✓ Secure local processing</span>
+          <span>✓ Document-heavy operations</span>
         </div>
       </div>
+    </section>
+
+
+
+
+    <section class="process-demo" id="demo">
+      <div class="container">
+        <div class="section-head">
+          <span class="kicker">See the workflow</span>
+          <h2>One mixed packet in. Organized, audit-ready records out.</h2>
+          <p>filepackR combines OCR, configurable document rules, quality review, and folder auditing into a single repeatable process.</p>
+        </div>
+        <div class="process-frame">
+          <div class="inline-process-animation"><img src="assets/filepackr-process-animation.svg" alt="Animated filepackR workflow showing packet intake, OCR analysis, smart routing, review, and audit-ready output" /></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section-alt" id="features">
+      <div class="container">
+        <div class="section-head">
+          <span class="kicker">Powered by IFR</span>
+          <h2>More than a PDF splitter. A smarter routing workflow.</h2>
+          <p>filepackR combines classification, intelligent routing, quality control, audit tools, and configurable business rules in one focused desktop application.</p>
+        </div>
+
+        <div class="features">
+          <article class="feature">
+            <div class="feature-icon">01</div>
+            <h3>PDF splitting, merging, and organization</h3>
+            <p>Split mixed PDF packets into separate documents, combine related pages, merge supporting records, and apply consistent filenames automatically.</p>
+          </article>
+          <article class="feature">
+            <div class="feature-icon teal">02</div>
+            <h3>IFR-powered document routing</h3>
+            <p>Use OCR and customizable rules to identify PDF documents and route organized records through the workflows that keep your business moving.</p>
+          </article>
+          <article class="feature">
+            <div class="feature-icon">03</div>
+            <h3>Audit Center</h3>
+            <p>Inspect routed folders for missing, duplicate, incomplete, or corrupt files and manage routing exceptions from one focused queue.</p>
+          </article>
+          <article class="feature">
+            <div class="feature-icon teal">04</div>
+            <h3>Scan-quality pre-flight</h3>
+            <p>Flag blurry, dark, clipped, skewed, low-resolution, or suspicious pages before poor scans become permanent records.</p>
+          </article>
+          <article class="feature">
+            <div class="feature-icon">05</div>
+            <h3>Email and background-check routing</h3>
+            <p>Connect Outlook workflows to identify certain emails and documents, route them into the correct folders on your drive, and surface uncertain matches.</p>
+          </article>
+          <article class="feature">
+            <div class="feature-icon teal">06</div>
+            <h3>Packet history</h3>
+            <p>Search metadata-only activity history, review audits and exports, open destination folders, and export filtered CSV summaries.</p>
+          </article>
+
+          <article class="feature">
+            <div class="feature-icon">07</div>
+            <h3>Custom routing solutions</h3>
+            <p>Need a specialized workflow? We can tailor filepackR around your goals, document types, folder structure, routing logic, review process, and operational requirements.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="workflow">
+      <div class="container">
+        <div class="section-head">
+          <span class="kicker">Simple workflow</span>
+          <h2>Process complex paperwork without a complicated process.</h2>
+          <p>filepackR is designed to classify, route, and organize files without forcing office staff to become technical users.</p>
+        </div>
+        <div class="steps">
+          <article class="step">
+            <div class="step-number">1</div>
+            <h3>Open or scan a packet</h3>
+            <p>Load a combined packet. filepackR analyzes pages locally, detects likely document types, and prepares each file for routing.</p>
+          </article>
+          <article class="step">
+            <div class="step-number">2</div>
+            <h3>Review the routing</h3>
+            <p>Confirm assignments, change filenames, resolve uncertain routing decisions, and review quality alerts before the packet is finalized.</p>
+          </article>
+          <article class="step">
+            <div class="step-number">3</div>
+            <h3>Route organized records</h3>
+            <p>Create clean PDFs with consistent filenames, route them into the correct folders, and audit records later to catch missing or incomplete documents.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section-alt" id="scale">
+      <div class="container scale-grid">
+        <div>
+          <span class="kicker">Built to scale</span>
+          <h2>A flexible foundation for repeatable document routing.</h2>
+          <p class="scale-copy">
+            Start with employee onboarding. Expand into additional packet types, document libraries, operational teams, and compliance workflows as your organization grows. filepackR is designed to adapt its routing around your existing process instead of forcing your team into a rigid one-size-fits-all system.
+          </p>
+          <div class="scale-list">
+            <div class="scale-item">
+              <span class="check">✓</span>
+              <div><strong>Configurable checklists</strong><p>Define the documents that are required, optional, conditional, or expected later for each workflow.</p></div>
+            </div>
+            <div class="scale-item">
+              <span class="check">✓</span>
+              <div><strong>Routing rules that evolve</strong><p>Add recognition phrases, edit built-in logic with safeguards, preserve preferred names, and refine how documents are routed over time.</p></div>
+            </div>
+
+            <div class="scale-item">
+              <span class="check">✓</span>
+              <div><strong>Tailored routing solutions</strong><p>We can adapt filepackR to your goals, document types, folder structure, internal rules, destinations, and review workflow.</p></div>
+            </div>
+            <div class="scale-item">
+              <span class="check">✓</span>
+              <div><strong>Local-first control</strong><p>Keep sensitive files in your existing folders while filepackR manages metadata and workflow state locally.</p></div>
+            </div>
+
+          <div class="scale-item">
+            <span class="check">R</span>
+            <div><strong>Why the final R?</strong><p>The R stands for routing. filepackR is built around IFR, or Intelligent File Routing, to identify, organize, and route files according to the way your business works.</p></div>
+          </div>
+          </div>
+        </div>
+
+        <aside class="value-card">
+          <p>“The real value is not just faster filing. It is knowing the packet was organized consistently, reviewed, and checked before missing paperwork becomes a problem.”</p>
+          <small>Built for document-heavy onboarding and compliance workflows</small>
+        </aside>
+      </div>
+    </section>
+
+
+
+    <section class="section section-alt" id="pdf-processing">
+      <div class="container">
+        <div class="section-head">
+          <span class="kicker">PDF document processing</span>
+          <h2>Split, combine, merge, organize, and route PDFs in one workflow.</h2>
+          <p>filepackR goes beyond basic PDF splitting. It helps teams turn mixed PDF files into consistently named records, combine related pages, route documents into the right workflows, and flag exceptions before they become operational problems.</p>
+        <p class="pdf-processing-link">
+          <a href="pdf-splitter-software/">Learn more about PDF splitter and merger software <span aria-hidden="true">→</span></a>
+        </p>
+        </div>
+        <div class="steps">
+          <article class="step">
+            <div class="step-number">01</div>
+            <h3>Split mixed PDF files</h3>
+            <p>Separate large scanned packets into individual documents without manually rebuilding every file one page at a time.</p>
+          </article>
+          <article class="step">
+            <div class="step-number">02</div>
+            <h3>Merge related pages</h3>
+            <p>Combine supporting pages into the correct record so multi-page documents remain complete and easy to audit.</p>
+          </article>
+          <article class="step">
+            <div class="step-number">03</div>
+            <h3>Route organized records</h3>
+            <p>Use configurable workflows to route documents where they belong and surface items that need review or follow-up.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+
+    <section class="section" id="value">
+      <div class="container">
+        <div class="section-head">
+          <span class="kicker">Why filepackR matters</span>
+          <h2>Move from manual filing to intelligent document routing.</h2>
+          <p>Document processing is rarely difficult because of one large task. The real cost comes from dozens of small manual steps repeated across every packet. filepackR turns those steps into a repeatable routing workflow.</p>
+        </div>
+        <div class="features">
+          <article class="feature">
+            <div class="feature-icon">TIME</div>
+            <h3>Save administrative time</h3>
+            <p>Reduce the repetitive work of separating scans, naming files, moving PDFs, and manually checking folders one document at a time.</p>
+          </article>
+          <article class="feature">
+            <div class="feature-icon teal">ERR</div>
+            <h3>Reduce preventable errors</h3>
+            <p>Apply consistent rules and filenames so missing files, duplicates, poor scans, and misfiled documents are easier to catch before they create problems.</p>
+          </article>
+          <article class="feature">
+            <div class="feature-icon">AUDIT</div>
+            <h3>Stay audit-ready</h3>
+            <p>Turn folder reviews into a repeatable process with targeted audits, checklist-aware findings, and a focused queue for items requiring attention.</p>
+          </article>
+          <article class="feature">
+            <div class="feature-icon teal">LOCAL</div>
+            <h3>Keep control of sensitive files</h3>
+            <p>Process records locally and keep documents in your existing Windows folders instead of relying on a cloud upload workflow for routine classification.</p>
+          </article>
+          <article class="feature">
+            <div class="feature-icon">OPS</div>
+            <h3>Standardize routing operations</h3>
+            <p>Capture naming conventions, recognition logic, routing rules, checklists, and review steps inside the software so the process does not depend on one experienced employee.</p>
+          </article>
+          <article class="feature">
+            <div class="feature-icon teal">FOCUS</div>
+            <h3>Focus staff on exceptions</h3>
+            <p>Let the application handle repeatable work while staff concentrate on the smaller number of items that genuinely need judgment or follow-up.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section-alt" id="use-cases">
+      <div class="container">
+        <div class="section-head">
+          <span class="kicker">Built for real operations</span>
+          <h2>Useful anywhere document packets need to be identified, checked, and routed consistently.</h2>
+          <p>filepackR started with onboarding and compliance-heavy personnel files, but the same routing model can support many other records-based processes.</p>
+        </div>
+        <div class="steps use-case-steps">
+          <article class="step">
+            <div class="step-number">01</div>
+            <h3>Employee onboarding</h3>
+            <p>Organize hiring packets, acknowledgments, payroll records, background-check documents, and supporting forms.</p>
+          </article>
+          <article class="step">
+            <div class="step-number">02</div>
+            <h3>Credentialing and compliance</h3>
+            <p>Track recurring requirements, expected-later documents, annual updates, and folders that need follow-up.</p>
+          </article>
+          <article class="step">
+            <div class="step-number">03</div>
+            <h3>Client and case intake</h3>
+            <p>Adapt the same rules-based routing system to other packet types where consistent naming, folder placement, and audit readiness matter.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="security">
+      <div class="container scale-grid">
+        <div>
+          <span class="kicker">Local-first security</span>
+          <h2>Route files intelligently without giving up control of your records.</h2>
+          <p class="scale-copy">filepackR is designed for organizations that handle sensitive paperwork and want practical routing automation while reducing the risk of sending sensitive documents through unsecured cloud workflows.</p>
+          <div class="scale-list">
+            <div class="scale-item">
+              <span class="check">✓</span>
+              <div><strong>Route files into your existing folders</strong><p>Continue using the Windows folder structure your team already understands while filepackR routes records into the right destinations.</p></div>
+            </div>
+            <div class="scale-item">
+              <span class="check">✓</span>
+              <div><strong>Local document analysis</strong><p>OCR classification and packet review can run on multiple workstations where the application is installed.</p></div>
+            </div>
+            <div class="scale-item">
+              <span class="check">✓</span>
+              <div><strong>Metadata-only activity history</strong><p>Track operational activity without storing OCR text, email bodies, or scanned-document contents in the history view.</p></div>
+            </div>
+          </div>
+        </div>
+        <aside class="value-card">
+          <p>“The goal is simple: reduce repetitive work, catch preventable errors earlier, and make records easier to trust.”</p>
+          <small>filepackR turns a fragile manual process into a repeatable workflow.</small>
+        </aside>
+      </div>
+    </section>
+
+    <section class="cta" id="contact">
+      <div class="container cta-box">
+        <div>
+          <h2>File. Pack. Route.</h2>
+          <p>See how filepackR can transform repetitive packet sorting into cleaner, faster, and more scalable file routing, or discuss a custom routing solution tailored to your business goals.</p>
+        </div>
+        <button class="button button-primary demo-trigger" type="button" data-source="Bottom call-to-action">Request a demo</button>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container footer-inner">
+      <span>© <span id="year"></span> filepackR. All rights reserved.</span>
+      <div class="footer-links">
+        <a href="mailto:steve@stevethibault.com">Contact</a>
+        <a href="pdf-splitter-software/">PDF Splitter Software</a>
+        <a href="#features">Features</a>
+      </div>
     </div>
-    <aside class="value-card">
-      <p>“The goal is simple: reduce repetitive work, catch preventable errors earlier, and make records easier to trust.”</p>
-      <small>filepackR turns a fragile manual process into a repeatable workflow.</small>
-    </aside>
-  </div>
-</section>
+  </footer>
 
-<section class="cta" id="contact">
-  <div class="container cta-box">
-    <div>
-      <h2>File. Pack. Route.</h2>
-      <p>See how filepackR can transform repetitive packet sorting into cleaner, faster, and more scalable file routing, or discuss a custom routing solution tailored to your business goals.</p>
+  <script>
+    document.getElementById("year").textContent = new Date().getFullYear();
+  </script>
+
+  <div class="demo-modal" id="demoModal" hidden aria-hidden="true" role="dialog" aria-modal="true" aria-labelledby="demoModalTitle">
+    <div class="demo-modal-card">
+      <div class="demo-modal-header">
+        <div>
+          <span class="kicker">Request a demo</span>
+          <h2 id="demoModalTitle">See how filepackR can help your team.</h2>
+          <p>Tell us a little about your workflow. We will follow up to discuss your needs, answer questions, and explore a custom routing solution tailored to your goals.</p>
+        </div>
+        <button class="demo-close" type="button" aria-label="Close demo request form">&times;</button>
+      </div>
+      <form class="demo-form" id="demoRequestForm" action="https://formsubmit.co/ajax/steve@stevethibault.com" method="POST">
+        <input type="hidden" name="_subject" value="New filepackR Demo Request" />
+        <input type="hidden" name="_template" value="table" />
+        <input type="hidden" name="Page source" id="demoSource" value="Website" />
+        <input class="honeypot" type="text" name="_honey" tabindex="-1" autocomplete="off" aria-hidden="true" />
+        <div class="form-grid">
+          <div class="form-field"><label for="firstName">First name *</label><input id="firstName" name="First name" type="text" autocomplete="given-name" required /></div>
+          <div class="form-field"><label for="lastName">Last name *</label><input id="lastName" name="Last name" type="text" autocomplete="family-name" required /></div>
+          <div class="form-field"><label for="workEmail">Work email *</label><input id="workEmail" name="email" type="email" autocomplete="email" required /></div>
+          <div class="form-field"><label for="phone">Phone number</label><input id="phone" name="Phone number" type="tel" autocomplete="tel" /></div>
+          <div class="form-field"><label for="businessName">Business or organization *</label><input id="businessName" name="Business or organization" type="text" autocomplete="organization" required /></div>
+          <div class="form-field"><label for="businessType">Business type *</label><select id="businessType" name="Business type" required><option value="">Select one</option><option>Home healthcare</option><option>Healthcare staffing</option><option>Human resources</option><option>Credentialing</option><option>Social services</option><option>Education</option><option>Property management</option><option>Legal or administrative services</option><option>Insurance</option><option>Other</option></select></div>
+          <div class="form-field"><label for="role">Job title or role</label><input id="role" name="Job title or role" type="text" autocomplete="organization-title" /></div>
+          <div class="form-field"><label for="packetVolume">Packets processed per month</label><select id="packetVolume" name="Approximate monthly packet volume"><option value="">Select one</option><option>Fewer than 25</option><option>25–100</option><option>101–500</option><option>More than 500</option><option>Not sure</option></select></div>
+          <div class="form-field full"><label for="needs">What would you like filepackR to help with? *</label><textarea id="needs" name="Description of needs" required placeholder="Describe your current process, pain points, or the workflow you want to improve."></textarea></div>
+        </div>
+        <button class="details-toggle" id="detailsToggle" type="button" aria-expanded="false" aria-controls="optionalDetails"><span>+</span> Add more details</button>
+        <div class="optional-details" id="optionalDetails" hidden>
+          <div class="form-grid">
+            <div class="form-field"><label for="preferredContact">Preferred contact method</label><select id="preferredContact" name="Preferred contact method"><option value="">No preference</option><option>Email</option><option>Phone</option></select></div>
+            <div class="form-field"><label for="biggestChallenge">Biggest challenge</label><select id="biggestChallenge" name="Biggest challenge"><option value="">Select one</option><option>Manual document sorting</option><option>Missing paperwork</option><option>Inconsistent filenames</option><option>Folder audits</option><option>Poor scan quality</option><option>Email attachments and follow-up documents</option><option>Scaling a growing workflow</option><option>Other</option></select></div>
+            <div class="form-field full"><label for="documentTypes">What types of documents do you process?</label><textarea id="documentTypes" name="Document types processed" placeholder="Examples: onboarding packets, compliance records, applications, credentialing files, client intake documents..."></textarea></div>
+          </div>
+        </div>
+        <p class="form-status" id="formStatus" aria-live="polite"></p>
+        <div class="form-actions">
+          <p class="form-note">Your information will only be used to respond to your inquiry.</p>
+          <button class="button button-primary" id="submitDemoRequest" type="submit">Submit demo request</button>
+        </div>
+      </form>
     </div>
-    <button class="button button-primary demo-trigger" type="button" data-source="Bottom call-to-action">Request a demo</button>
   </div>
-</section>
-</main>
-
-<footer> <div class="container footer-inner"> <span>© <span id="year"></span> filepackR. All rights reserved.</span> <div class="footer-links"> <a href="mailto:steve@stevethibault.com">Contact</a> <a href="pdf-splitter-software/">PDF Splitter Software</a> <a href="#features">Features</a> </div> </div> </footer>
-
-<script> document.getElementById("year").textContent = new Date().getFullYear(); </script>
-
-<div class="demo-modal" id="demoModal" hidden aria-hidden="true" role="dialog" aria-modal="true" aria-labelledby="demoModalTitle"> <div class="demo-modal-card"> <div class="demo-modal-header"> <div> <span class="kicker">Request a demo</span> <h2 id="demoModalTitle">See how filepackR can help your team.</h2> <p>Tell us a little about your workflow. We will follow up to discuss your needs, answer questions, and explore a custom routing solution tailored to your goals.</p> </div> <button class="demo-close" type="button" aria-label="Close demo request form">&times;</button> </div> <form class="demo-form" id="demoRequestForm" action="https://formsubmit.co/ajax/steve@stevethibault.com" method="POST"> <input type="hidden" name="_subject" value="New filepackR Demo Request" /> <input type="hidden" name="_template" value="table" /> <input type="hidden" name="Page source" id="demoSource" value="Website" /> <input class="honeypot" type="text" name="_honey" tabindex="-1" autocomplete="off" aria-hidden="true" /> <div class="form-grid"> <div class="form-field"><label for="firstName">First name *</label><input id="firstName" name="First name" type="text" autocomplete="given-name" required /></div> <div class="form-field"><label for="lastName">Last name *</label><input id="lastName" name="Last name" type="text" autocomplete="family-name" required /></div> <div class="form-field"><label for="workEmail">Work email *</label><input id="workEmail" name="email" type="email" autocomplete="email" required /></div> <div class="form-field"><label for="phone">Phone number</label><input id="phone" name="Phone number" type="tel" autocomplete="tel" /></div> <div class="form-field"><label for="businessName">Business or organization *</label><input id="businessName" name="Business or organization" type="text" autocomplete="organization" required /></div> <div class="form-field"><label for="businessType">Business type *</label><select id="businessType" name="Business type" required><option value="">Select one</option><option>Home healthcare</option><option>Healthcare staffing</option><option>Human resources</option><option>Credentialing</option><option>Social services</option><option>Education</option><option>Property management</option><option>Legal or administrative services</option><option>Insurance</option><option>Other</option></select></div> <div class="form-field"><label for="role">Job title or role</label><input id="role" name="Job title or role" type="text" autocomplete="organization-title" /></div> <div class="form-field"><label for="packetVolume">Packets processed per month</label><select id="packetVolume" name="Approximate monthly packet volume"><option value="">Select one</option><option>Fewer than 25</option><option>25–100</option><option>101–500</option><option>More than 500</option><option>Not sure</option></select></div> <div class="form-field full"><label for="needs">What would you like filepackR to help with? *</label><textarea id="needs" name="Description of needs" required placeholder="Describe your current process, pain points, or the workflow you want to improve."></textarea></div> </div> <button class="details-toggle" id="detailsToggle" type="button" aria-expanded="false" aria-controls="optionalDetails"><span>+</span> Add more details</button> <div class="optional-details" id="optionalDetails" hidden> <div class="form-grid"> <div class="form-field"><label for="preferredContact">Preferred contact method</label><select id="preferredContact" name="Preferred contact method"><option value="">No preference</option><option>Email</option><option>Phone</option></select></div> <div class="form-field"><label for="biggestChallenge">Biggest challenge</label><select id="biggestChallenge" name="Biggest challenge"><option value="">Select one</option><option>Manual document sorting</option><option>Missing paperwork</option><option>Inconsistent filenames</option><option>Folder audits</option><option>Poor scan quality</option><option>Email attachments and follow-up documents</option><option>Scaling a growing workflow</option><option>Other</option></select></div> <div class="form-field full"><label for="documentTypes">What types of documents do you process?</label><textarea id="documentTypes" name="Document types processed" placeholder="Examples: onboarding packets, compliance records, applications, credentialing files, client intake documents..."></textarea></div> </div> </div> <p class="form-status" id="formStatus" aria-live="polite"></p> <div class="form-actions"> <p class="form-note">Your information will only be used to respond to your inquiry.</p> <button class="button button-primary" id="submitDemoRequest" type="submit">Submit demo request</button> </div> </form> </div> </div>
-
-<script> (() => { const modal = document.getElementById("demoModal"); const form = document.getElementById("demoRequestForm"); const closeButton = modal.querySelector(".demo-close"); const sourceInput = document.getElementById("demoSource"); const toggle = document.getElementById("detailsToggle"); const optionalDetails = document.getElementById("optionalDetails"); const status = document.getElementById("formStatus"); const submitButton = document.getElementById("submitDemoRequest"); const openModal = (source) => { sourceInput.value = source || "Website"; modal.hidden = false; modal.setAttribute("aria-hidden", "false"); document.body.classList.add("modal-open"); status.textContent = ""; status.className = "form-status"; requestAnimationFrame(() => document.getElementById("firstName").focus()); }; const closeModal = () => { modal.hidden = true; modal.setAttribute("aria-hidden", "true"); document.body.classList.remove("modal-open"); }; document.querySelectorAll(".demo-trigger").forEach((button) => { button.addEventListener("click", () => openModal(button.dataset.source)); }); const params = new URLSearchParams(window.location.search); if (params.get("demo") === "1") { openModal(params.get("source") || "SEO landing page"); history.replaceState({}, "", window.location.pathname + window.location.hash); } closeButton.addEventListener("click", closeModal); modal.addEventListener("click", (event) => { if (event.target === modal) closeModal(); }); document.addEventListener("keydown", (event) => { if (event.key === "Escape" && !modal.hidden) closeModal(); }); toggle.addEventListener("click", () => { const isOpen = !optionalDetails.hidden; optionalDetails.hidden = isOpen; toggle.setAttribute("aria-expanded", String(!isOpen)); toggle.innerHTML = isOpen ? "<span>+</span> Add more details" : "<span>−</span> Hide additional details"; }); form.addEventListener("submit", async (event) => { event.preventDefault(); if (!form.reportValidity()) return; submitButton.disabled = true; submitButton.textContent = "Sending..."; status.textContent = ""; status.className = "form-status"; try { const response = await fetch(form.action, { method: "POST", body: new FormData(form), headers: { "Accept": "application/json" } }); if (!response.ok) throw new Error("Submission failed"); window.trackFilepackREvent("demo_form_submit_success", { source: sourceInput.value || "website" }); status.textContent = "Thank you. Your demo request has been sent."; status.className = "form-status success"; form.reset(); optionalDetails.hidden = true; toggle.setAttribute("aria-expanded", "false"); toggle.innerHTML = "<span>+</span> Add more details"; setTimeout(closeModal, 1800); } catch (error) { window.trackFilepackREvent("demo_form_submit_error", { source: sourceInput.value || "website" }); status.textContent = "We could not send your request. Please try again or email steve@stevethibault.com."; status.className = "form-status error"; } finally { submitButton.disabled = false; submitButton.textContent = "Submit demo request"; } }); })(); </script>
-
-<script> document.querySelectorAll('a[href="#features"]').forEach((link) => { link.addEventListener("click", () => { window.trackFilepackREvent("explore_features_click"); }); }); document.querySelectorAll(".demo-trigger").forEach((button) => { button.addEventListener("click", () => { window.trackFilepackREvent("demo_form_open", { source: button.dataset.source || "website" }); }); }); </script>
-
-</body> </html>
 
 
-Close
+  <script>
+    (() => {
+      const modal = document.getElementById("demoModal");
+      const form = document.getElementById("demoRequestForm");
+      const closeButton = modal.querySelector(".demo-close");
+      const sourceInput = document.getElementById("demoSource");
+      const toggle = document.getElementById("detailsToggle");
+      const optionalDetails = document.getElementById("optionalDetails");
+      const status = document.getElementById("formStatus");
+      const submitButton = document.getElementById("submitDemoRequest");
+
+      const openModal = (source) => {
+        sourceInput.value = source || "Website";
+        modal.hidden = false;
+        modal.setAttribute("aria-hidden", "false");
+        document.body.classList.add("modal-open");
+        status.textContent = "";
+        status.className = "form-status";
+        requestAnimationFrame(() => document.getElementById("firstName").focus());
+      };
+      const closeModal = () => {
+        modal.hidden = true;
+        modal.setAttribute("aria-hidden", "true");
+        document.body.classList.remove("modal-open");
+      };
+      document.querySelectorAll(".demo-trigger").forEach((button) => {
+        button.addEventListener("click", () => openModal(button.dataset.source));
+      });
+
+      const params = new URLSearchParams(window.location.search);
+      if (params.get("demo") === "1") {
+        openModal(params.get("source") || "SEO landing page");
+        history.replaceState({}, "", window.location.pathname + window.location.hash);
+      }
+      closeButton.addEventListener("click", closeModal);
+      modal.addEventListener("click", (event) => { if (event.target === modal) closeModal(); });
+      document.addEventListener("keydown", (event) => { if (event.key === "Escape" && !modal.hidden) closeModal(); });
+
+      toggle.addEventListener("click", () => {
+        const isOpen = !optionalDetails.hidden;
+        optionalDetails.hidden = isOpen;
+        toggle.setAttribute("aria-expanded", String(!isOpen));
+        toggle.innerHTML = isOpen ? "<span>+</span> Add more details" : "<span>−</span> Hide additional details";
+      });
+
+      form.addEventListener("submit", async (event) => {
+        event.preventDefault();
+        if (!form.reportValidity()) return;
+        submitButton.disabled = true;
+        submitButton.textContent = "Sending...";
+        status.textContent = "";
+        status.className = "form-status";
+        try {
+          const response = await fetch(form.action, {
+            method: "POST",
+            body: new FormData(form),
+            headers: { "Accept": "application/json" }
+          });
+          if (!response.ok) throw new Error("Submission failed");
+          window.trackFilepackREvent("demo_form_submit_success", { source: sourceInput.value || "website" });
+          status.textContent = "Thank you. Your demo request has been sent.";
+          status.className = "form-status success";
+          form.reset();
+          optionalDetails.hidden = true;
+          toggle.setAttribute("aria-expanded", "false");
+          toggle.innerHTML = "<span>+</span> Add more details";
+          setTimeout(closeModal, 1800);
+        } catch (error) {
+          window.trackFilepackREvent("demo_form_submit_error", { source: sourceInput.value || "website" });
+          status.textContent = "We could not send your request. Please try again or email steve@stevethibault.com.";
+          status.className = "form-status error";
+        } finally {
+          submitButton.disabled = false;
+          submitButton.textContent = "Submit demo request";
+        }
+      });
+    })();
+  </script>
+
+
+  <script>
+    document.querySelectorAll('a[href="#features"]').forEach((link) => {
+      link.addEventListener("click", () => {
+        window.trackFilepackREvent("explore_features_click");
+      });
+    });
+
+    document.querySelectorAll(".demo-trigger").forEach((button) => {
+      button.addEventListener("click", () => {
+        window.trackFilepackREvent("demo_form_open", {
+          source: button.dataset.source || "website"
+        });
+      });
+    });
+  </script>
+</body>
+</html>

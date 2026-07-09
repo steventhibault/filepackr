@@ -394,6 +394,34 @@
     }
   
   
+
+
+    .software-preview { padding: 56px 0 36px; }
+    .software-screenshot-frame {
+      margin: 0;
+      overflow: hidden;
+      border: 1px solid var(--line);
+      border-radius: 24px;
+      background: white;
+      box-shadow: var(--shadow);
+    }
+    .software-screenshot-frame img {
+      display: block;
+      width: 100%;
+      height: auto;
+    }
+    .software-screenshot-frame figcaption {
+      padding: 12px 16px 16px;
+      color: #738198;
+      font-size: 13px;
+      text-align: center;
+    }
+    @media (max-width: 620px) {
+      .software-preview { padding: 42px 0 28px; }
+      .software-screenshot-frame { border-radius: 16px; }
+      .software-screenshot-frame figcaption { font-size: 12px; }
+    }
+
     .process-demo { padding: 30px 0 44px; }
     .process-frame {
       overflow: hidden;
@@ -663,7 +691,24 @@
       </div>
     </section>
 
+    <section class="section software-preview" id="software-preview">
+      <div class="container">
+        <div class="section-head">
+          <span class="kicker">Software preview</span>
+          <h2>See filepackR in action.</h2>
+          <p>Review packet pages, confirm document assignments, edit filenames, export organized PDFs, and audit records from one focused screen.</p>
+        </div>
 
+        <figure class="software-screenshot-frame">
+          <img
+            src="assets/filepackr-software-preview.jpg"
+            alt="filepackR software interface showing packet pages, document preview, assignment controls, and organized output PDFs"
+            loading="lazy"
+          />
+          <figcaption>Example onboarding packet shown with sample data.</figcaption>
+        </figure>
+      </div>
+    </section>
 
 
     <section class="process-demo" id="demo">

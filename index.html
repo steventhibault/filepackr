@@ -392,36 +392,40 @@
 
       .cta-box { padding: 28px; }
     }
-  
-  
 
-
-    .software-preview { padding: 56px 0 36px; }
-    .software-screenshot-frame {
+    .workflow-preview-grid {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) 360px;
+      align-items: start;
+      gap: 20px;
+    }
+    .workflow-preview-grid .steps {
+      grid-template-columns: 1fr;
+      gap: 12px;
+    }
+    .workflow-screenshot-card {
       margin: 0;
       overflow: hidden;
       border: 1px solid var(--line);
-      border-radius: 24px;
+      border-radius: 18px;
       background: white;
-      box-shadow: var(--shadow);
+      box-shadow: 0 16px 34px rgba(26,39,68,.10);
     }
-    .software-screenshot-frame img {
+    .workflow-screenshot-card img {
       display: block;
       width: 100%;
       height: auto;
     }
-    .software-screenshot-frame figcaption {
-      padding: 12px 16px 16px;
+    .workflow-screenshot-card figcaption {
+      padding: 11px 13px 13px;
       color: #738198;
-      font-size: 13px;
+      font-size: 12px;
+      line-height: 1.4;
       text-align: center;
     }
-    @media (max-width: 620px) {
-      .software-preview { padding: 42px 0 28px; }
-      .software-screenshot-frame { border-radius: 16px; }
-      .software-screenshot-frame figcaption { font-size: 12px; }
-    }
 
+  
+  
     .process-demo { padding: 30px 0 44px; }
     .process-frame {
       overflow: hidden;
@@ -593,6 +597,29 @@
       }
     }
 
+
+    @media (max-width: 900px) {
+      .workflow-preview-grid {
+        grid-template-columns: 1fr;
+      }
+      .workflow-preview-grid .steps {
+        grid-template-columns: repeat(3, 1fr);
+      }
+      .workflow-screenshot-card {
+        width: min(520px, 100%);
+        justify-self: center;
+      }
+    }
+
+    @media (max-width: 620px) {
+      .workflow-preview-grid .steps {
+        grid-template-columns: 1fr;
+      }
+      .workflow-screenshot-card {
+        width: 100%;
+      }
+    }
+
   
     .pdf-processing-link { margin: 20px 0 0; }
     .pdf-processing-link a {
@@ -691,24 +718,7 @@
       </div>
     </section>
 
-    <section class="section software-preview" id="software-preview">
-      <div class="container">
-        <div class="section-head">
-          <span class="kicker">Software preview</span>
-          <h2>See filepackR in action.</h2>
-          <p>Review packet pages, confirm document assignments, edit filenames, export organized PDFs, and audit records from one focused screen.</p>
-        </div>
 
-        <figure class="software-screenshot-frame">
-          <img
-            src="assets/filepackr-software-preview.jpg"
-            alt="filepackR software interface showing packet pages, document preview, assignment controls, and organized output PDFs"
-            loading="lazy"
-          />
-          <figcaption>Example onboarding packet shown with sample data.</figcaption>
-        </figure>
-      </div>
-    </section>
 
 
     <section class="process-demo" id="demo">
@@ -780,22 +790,33 @@
           <h2>Process complex paperwork without a complicated process.</h2>
           <p>filepackR is designed to classify, route, and organize files without forcing office staff to become technical users.</p>
         </div>
-        <div class="steps">
-          <article class="step">
-            <div class="step-number">1</div>
-            <h3>Open or scan a packet</h3>
-            <p>Load a combined packet. filepackR analyzes pages locally, detects likely document types, and prepares each file for routing.</p>
-          </article>
-          <article class="step">
-            <div class="step-number">2</div>
-            <h3>Review the routing</h3>
-            <p>Confirm assignments, change filenames, resolve uncertain routing decisions, and review quality alerts before the packet is finalized.</p>
-          </article>
-          <article class="step">
-            <div class="step-number">3</div>
-            <h3>Route organized records</h3>
-            <p>Create clean PDFs with consistent filenames, route them into the correct folders, and audit records later to catch missing or incomplete documents.</p>
-          </article>
+        <div class="workflow-preview-grid">
+          <div class="steps">
+            <article class="step">
+              <div class="step-number">1</div>
+              <h3>Open or scan a packet</h3>
+              <p>Load a combined packet. filepackR analyzes pages locally, detects likely document types, and prepares each file for routing.</p>
+            </article>
+            <article class="step">
+              <div class="step-number">2</div>
+              <h3>Review the routing</h3>
+              <p>Confirm assignments, change filenames, resolve uncertain routing decisions, and review quality alerts before the packet is finalized.</p>
+            </article>
+            <article class="step">
+              <div class="step-number">3</div>
+              <h3>Route organized records</h3>
+              <p>Create clean PDFs with consistent filenames, route them into the correct folders, and audit records later to catch missing or incomplete documents.</p>
+            </article>
+          </div>
+
+          <figure class="workflow-screenshot-card">
+            <img
+              src="assets/filepackr-software-preview-small.jpg"
+              alt="filepackR software interface showing packet pages, document preview, assignment controls, and organized output PDFs"
+              loading="lazy"
+            />
+            <figcaption>Small preview of the filepackR review screen.</figcaption>
+          </figure>
         </div>
       </div>
     </section>

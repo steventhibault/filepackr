@@ -256,6 +256,61 @@
     .metric strong { display: block; font-size: 1.35rem; letter-spacing: -.04em; }
     .metric small { color: #748196; font-size: 10px; font-weight: 720; }
 
+    /* Real screenshot showcase (separate from the hero mockup above),
+       framed the same way, with a click-to-expand lightbox. */
+    .app-screenshot {
+      position: relative;
+      margin-top: 15px;
+      border-radius: 14px;
+      overflow: hidden;
+      border: 1px solid #e5edf6;
+      cursor: pointer;
+    }
+    .app-screenshot img { display: block; width: 100%; height: auto; }
+    .shot-caption {
+      display: block;
+      margin-top: 11px;
+      color: #748196;
+      font-size: 11px;
+      font-weight: 800;
+      letter-spacing: .08em;
+      text-transform: uppercase;
+      text-align: center;
+    }
+
+    .img-lightbox {
+      position: fixed;
+      inset: 0;
+      z-index: 10000;
+      display: none;
+      align-items: center;
+      justify-content: center;
+      background: rgba(10, 16, 28, 0.88);
+      padding: 24px;
+      backdrop-filter: blur(4px);
+    }
+    .img-lightbox.is-open { display: flex; }
+    .img-lightbox img {
+      max-width: min(94vw, 1200px);
+      max-height: 90vh;
+      border-radius: 12px;
+      box-shadow: 0 30px 80px rgba(0, 0, 0, 0.5);
+    }
+    .img-lightbox-close {
+      position: fixed;
+      top: 20px;
+      right: 24px;
+      width: 42px;
+      height: 42px;
+      border: 0;
+      border-radius: 999px;
+      background: rgba(255, 255, 255, 0.14);
+      color: #ffffff;
+      font-size: 24px;
+      line-height: 1;
+      cursor: pointer;
+    }
+
     .trust { padding-bottom: 18px; }
     .trust-box {
       display: flex;
@@ -679,6 +734,28 @@
       </div>
     </section>
 
+    <section class="process-demo" id="screenshot">
+      <div class="container">
+        <div class="section-head">
+          <span class="kicker">The real interface</span>
+          <h2>What that workflow actually looks like inside filepackR.</h2>
+          <p>A real packet, mid-review: 31 pages assigned into 13 output PDFs, each one named and confidence-scored before export.</p>
+        </div>
+        <div class="app-card" style="max-width: 900px; margin: 0 auto;">
+          <div class="window-bar">
+            <div class="window-dot"></div>
+            <div class="window-dot"></div>
+            <div class="window-dot"></div>
+            <span class="window-title">filepackR Intake Processor</span>
+          </div>
+          <div class="app-screenshot" onclick="openImgLightbox('assets/filepackr-screenshot.jpg', 'filepackR interface showing a document packet sorted into 13 output PDFs')" role="button" tabindex="0" aria-label="View full-size screenshot of filepackR" onkeydown="if(event.key==='Enter'){this.click();}">
+            <img src="assets/filepackr-screenshot.jpg" alt="filepackR interface showing a document packet sorted into 13 output PDFs" loading="lazy" />
+          </div>
+          <span class="shot-caption">Click to view full size</span>
+        </div>
+      </div>
+    </section>
+
     <section class="section section-alt" id="features">
       <div class="container">
         <div class="section-head">
@@ -948,8 +1025,38 @@
     </div>
   </footer>
 
+  <div id="imgLightbox" class="img-lightbox" aria-hidden="true">
+    <button type="button" id="closeImgLightbox" class="img-lightbox-close" aria-label="Close image preview">&times;</button>
+    <img id="imgLightboxImg" src="" alt="">
+  </div>
+
   <script>
     document.getElementById("year").textContent = new Date().getFullYear();
+  </script>
+
+  <script>
+    function openImgLightbox(src, altText) {
+      var lb = document.getElementById("imgLightbox");
+      var img = document.getElementById("imgLightboxImg");
+      img.src = src;
+      img.alt = altText || "";
+      lb.classList.add("is-open");
+      lb.setAttribute("aria-hidden", "false");
+      document.body.style.overflow = "hidden";
+    }
+    function closeImgLightbox() {
+      var lb = document.getElementById("imgLightbox");
+      lb.classList.remove("is-open");
+      lb.setAttribute("aria-hidden", "true");
+      document.body.style.overflow = "";
+    }
+    document.getElementById("closeImgLightbox").addEventListener("click", closeImgLightbox);
+    document.getElementById("imgLightbox").addEventListener("click", function(event) {
+      if (event.target === this) closeImgLightbox();
+    });
+    document.addEventListener("keydown", function(event) {
+      if (event.key === "Escape") closeImgLightbox();
+    });
   </script>
 
   <div class="demo-modal" id="demoModal" hidden aria-hidden="true" role="dialog" aria-modal="true" aria-labelledby="demoModalTitle">

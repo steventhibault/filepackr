@@ -2,13 +2,13 @@
 
 ## Executive Summary
 
-filepackR is a local-first document intake and workflow automation application designed for organizations that process repetitive, document-heavy packets.
+filepackR is a local-first document intake and workflow automation application designed for organizations that process repetitive, paper-heavy records.
 
-The software takes a combined PDF packet, analyzes its pages using OCR, identifies the likely document types, separates pages into the appropriate output files, applies consistent filenames, and prepares the records for export into the correct employee or client folder. It also helps staff identify missing, duplicated, incomplete, corrupt, or low-quality files before those problems become harder to fix later.
+The software supports the workflow that starts with mixed, disorganized paper stacks. Staff scan the paperwork, filepackR analyzes the scanned pages using OCR, identifies the likely document types, separates pages into the appropriate output files, applies consistent filenames, and prepares the records for export into the correct employee or client folder. It also helps staff identify missing, duplicated, incomplete, corrupt, or low-quality files before those problems become harder to fix later.
 
 The result is a cleaner and more repeatable document-management process with less manual sorting, fewer preventable errors, and better visibility into the status of each record.
 
-filepackR was initially designed around employee onboarding and compliance-heavy personnel files, but its architecture is flexible enough to support many other packet-based workflows.
+filepackR was initially designed around employee onboarding and compliance-heavy personnel files, but its architecture is flexible enough to support many other paper-heavy workflows.
 
 ---
 
@@ -16,13 +16,14 @@ filepackR was initially designed around employee onboarding and compliance-heavy
 
 Many organizations still rely on a manual document workflow:
 
-1. Staff receive or scan a packet containing multiple forms.
-2. Someone opens the scan and manually determines where each page belongs.
-3. Pages are separated into individual PDFs.
-4. Each PDF is renamed according to an internal naming convention.
-5. Files are moved into the correct employee, client, or case folder.
-6. Staff later search folders manually to determine whether anything is missing.
-7. Clearance documents or follow-up records arriving by email must be identified and filed separately.
+1. Staff receive stacks of mixed paper documents.
+2. Someone identifies each page and scans the paperwork.
+3. Staff check whether the scanned documents are complete and readable.
+4. Pages are separated into individual PDFs.
+5. Each PDF is renamed according to an internal naming convention.
+6. Files are moved into the correct employee, client, or case folder.
+7. Staff later search folders manually to determine whether anything is missing.
+8. Clearance documents or follow-up records arriving by email must be identified and filed separately.
 
 This approach is time-consuming and fragile. It creates opportunities for:
 
@@ -42,11 +43,11 @@ Even when each individual mistake seems minor, the cumulative cost is significan
 
 ## What filepackR Does
 
-filepackR transforms a mixed packet into organized, reviewable, audit-ready records.
+filepackR transforms mixed paper stacks and scanned files into organized, reviewable, audit-ready records.
 
-### Intelligent Packet Processing
+### Intelligent Paperwork Processing
 
-A user opens or scans a packet containing multiple forms. filepackR analyzes the pages locally using OCR and identifies the likely document type for each page.
+A user scans a mixed paper stack or opens the resulting scanned file. filepackR analyzes the pages locally using OCR and identifies the likely document type for each page.
 
 The software can then:
 
@@ -85,7 +86,7 @@ It can identify:
 - Missing required documents
 - Duplicate outputs
 - Corrupt or unreadable PDFs
-- Incomplete multi-page packets
+- Incomplete multi-page forms
 - Unexpected filenames
 - Conditional requirements needing review
 - Items expected later by email
@@ -97,7 +98,7 @@ Staff can audit one folder, selected folders, an entire directory, folders modif
 
 A correctly named file is still a problem if the scan is blurry, clipped, dark, washed out, low-resolution, or severely crooked.
 
-filepackR can flag likely scan-quality issues before export so staff can review questionable pages while the packet is still in front of them.
+filepackR can flag likely scan-quality issues before export so staff can review questionable pages while the paperwork is still in front of them.
 
 ### Background-Check and Email Filing
 
@@ -105,16 +106,16 @@ filepackR can monitor supported Outlook workflows for clearance documents and re
 
 When a match is uncertain, the application routes the item into the Review Queue instead of silently guessing.
 
-### Packet History
+### Processing History
 
 filepackR maintains a metadata-only activity ledger that allows staff to review past exports, audits, and supported email-filing events.
 
 This history can answer practical questions such as:
 
-- Was this packet already processed?
+- Was this record set already processed?
 - When was the employee folder last audited?
 - Was the clearance document filed?
-- Where was the exported packet saved?
+- Where were the exported records saved?
 - What activity occurred during a selected date range?
 
 ---
@@ -125,9 +126,9 @@ This history can answer practical questions such as:
 
 The most obvious benefit is reduced manual document handling.
 
-Instead of opening a large scan, separating pages one by one, renaming every PDF, and moving each file manually, staff can review an organized packet prepared by the software.
+Instead of identifying every page by hand, scanning documents individually, separating pages one by one, renaming every PDF, and moving each file manually, staff can review organized records prepared by the software.
 
-The time savings become more meaningful as packet complexity and volume increase.
+The time savings become more meaningful as paperwork complexity and volume increase.
 
 Even at modest volume, filepackR reduces repetitive office work and allows staff to focus on exceptions rather than routine sorting.
 
@@ -144,7 +145,7 @@ It helps reduce:
 - Accidental duplicates
 - Misfiled documents
 - Poor-quality scans
-- Unnoticed incomplete packets
+- Unnoticed incomplete paperwork
 - Delayed follow-up filing
 
 The goal is not to remove human judgment. The goal is to reserve human attention for the items that actually require judgment.
@@ -177,15 +178,15 @@ That makes the process easier to teach, easier to repeat, and less vulnerable wh
 
 ## 6. Make Exceptions Easier to Manage
 
-Most packets do not need equal attention.
+Most record sets do not need equal attention.
 
-filepackR allows staff to focus on the smaller number of packets that are missing documents, contain uncertain pages, or require follow-up.
+filepackR allows staff to focus on the smaller number of records that are missing documents, contain uncertain pages, or require follow-up.
 
 The Review Queue converts scattered problems into a manageable list.
 
 ## 7. Create a Foundation for Growth
 
-filepackR is not limited to one fixed packet.
+filepackR is not limited to one fixed workflow.
 
 The application can support multiple workflow templates with different required, optional, conditional, or expected-later documents.
 
@@ -194,7 +195,7 @@ An organization can start with one onboarding process and later expand into:
 - Additional employee types
 - Annual renewals
 - Contractor files
-- Training packets
+- Training paperwork
 - Client intake
 - Credentialing
 - Compliance reviews
@@ -209,7 +210,7 @@ An organization can start with one onboarding process and later expand into:
 Reads page content locally and assigns likely document types.
 
 ### Automatic PDF Separation
-Splits mixed packets into clean, consistently named output PDFs.
+Splits scanned paperwork into clean, consistently named output PDFs.
 
 ### Configurable Document Rules
 Supports built-in logic, custom rules, aliases, learned corrections, and safe reversion to defaults.
@@ -232,7 +233,7 @@ Flags likely blur, clipping, skew, darkness, overexposure, low resolution, and n
 ### Outlook Filing Support
 Identifies and files supported clearance documents while routing uncertain matches for review.
 
-### Packet History
+### Processing History
 Provides searchable, metadata-only activity history and CSV export.
 
 ### Local-First Design
@@ -245,7 +246,7 @@ Keeps files in the organization’s existing folders and processes documents loc
 filepackR is designed to grow with the organization.
 
 ### Start Small
-Begin with one repeatable packet type, such as employee onboarding.
+Begin with one repeatable paperwork type, such as employee onboarding.
 
 ### Add More Document Types
 Create new rules and recognition phrases for organization-specific forms.
@@ -257,7 +258,7 @@ Support different employee groups, annual renewals, contractors, or other depart
 Preserve preferred filenames, aliases, learned corrections, and custom rules across updates.
 
 ### Support Higher Volume
-As packet volume increases, the value of consistent automation grows because the application handles repeatable work while staff focus on exceptions.
+As paperwork volume increases, the value of consistent automation grows because the application handles repeatable work while staff focus on exceptions.
 
 ### Extend Into New Use Cases
 The same underlying model can be adapted to other records-based operations where documents must be identified, sorted, checked, and filed consistently.
@@ -268,7 +269,7 @@ The same underlying model can be adapted to other records-based operations where
 
 filepackR is best suited for organizations that:
 
-- Process recurring document packets
+- Process recurring paper-heavy records
 - Maintain employee, client, or case folders
 - Need consistent filenames and folder structure
 - Handle compliance-sensitive records
@@ -295,7 +296,7 @@ Potential industries and use cases include:
 
 filepackR helps organizations turn messy paperwork into organized, audit-ready records.
 
-It combines OCR-powered classification, configurable rules, quality checks, folder auditing, email-filing support, and metadata-only history in one local-first desktop workflow.
+It combines OCR-powered classification, configurable rules, quality checks, folder checks, email-filing support, and metadata-only history in one local-first desktop workflow.
 
 The value is not simply faster PDF splitting.
 
@@ -305,7 +306,7 @@ The value is a more dependable, repeatable, and scalable document process.
 
 ## Short Website Summary
 
-filepackR transforms mixed document packets into organized, audit-ready records.
+filepackR transforms mixed paperwork and scanned files into organized, audit-ready records.
 
 The application reads incoming paperwork, identifies document types, separates pages into clean PDFs, applies consistent filenames, flags missing or low-quality records, and helps teams manage follow-up items from one focused workflow.
 

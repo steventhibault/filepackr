@@ -162,6 +162,122 @@
       position: relative;
       z-index: 1;
     }
+    .scan-hero-bg {
+      position: absolute;
+      inset: 0;
+      z-index: 0;
+      pointer-events: none;
+      overflow: hidden;
+      background:
+        linear-gradient(90deg, rgba(37,99,235,.06) 1px, transparent 1px),
+        linear-gradient(0deg, rgba(20,184,198,.055) 1px, transparent 1px);
+      background-size: 72px 72px;
+      opacity: .9;
+    }
+    .scan-hero-bg::before {
+      content: "";
+      position: absolute;
+      left: -18%;
+      top: 36%;
+      width: 136%;
+      height: 3px;
+      background: linear-gradient(90deg, transparent, rgba(20,184,198,.08), rgba(20,184,198,.68), rgba(37,99,235,.32), transparent);
+      box-shadow: 0 0 26px rgba(20,184,198,.35), 0 0 70px rgba(37,99,235,.15);
+      animation: scannerSweep 7.5s ease-in-out infinite;
+    }
+    .scan-hero-bg::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background:
+        radial-gradient(circle at 70% 30%, rgba(20,184,198,.12), transparent 24rem),
+        radial-gradient(circle at 84% 68%, rgba(37,99,235,.10), transparent 22rem);
+    }
+    .scan-doc,
+    .scan-folder,
+    .scan-route {
+      position: absolute;
+      display: block;
+    }
+    .scan-doc {
+      width: 168px;
+      height: 216px;
+      border: 1px solid rgba(37,99,235,.18);
+      border-radius: 12px;
+      background:
+        linear-gradient(90deg, rgba(37,99,235,.12) 0 42%, transparent 42%),
+        linear-gradient(90deg, rgba(20,184,198,.16) 0 34%, transparent 34%),
+        linear-gradient(90deg, rgba(37,99,235,.10) 0 60%, transparent 60%),
+        linear-gradient(90deg, rgba(20,184,198,.12) 0 28%, transparent 28%),
+        rgba(255,255,255,.45);
+      background-size: 98px 8px, 74px 8px, 118px 8px, 64px 8px, auto;
+      background-position: 28px 44px, 28px 78px, 28px 112px, 28px 148px, 0 0;
+      background-repeat: no-repeat;
+      box-shadow: 0 24px 70px rgba(26,39,68,.06);
+      opacity: .48;
+    }
+    .scan-doc::before,
+    .scan-doc::after {
+      content: "";
+      position: absolute;
+      border: 2px solid rgba(20,184,198,.45);
+      border-radius: 2px;
+      opacity: .75;
+    }
+    .scan-doc::before { left: 22px; top: 68px; width: 66px; height: 18px; }
+    .scan-doc::after { right: 22px; bottom: 46px; width: 58px; height: 18px; border-color: rgba(37,99,235,.35); }
+    .scan-doc.one { left: 47%; top: 7%; }
+    .scan-doc.two { left: 52%; bottom: 5%; transform: scale(.72); opacity: .34; }
+    .scan-doc.three { right: 30%; top: 15%; transform: scale(.62); opacity: .28; }
+    .scan-route {
+      right: 7%;
+      top: 28%;
+      width: 300px;
+      height: 360px;
+      border-top: 2px solid rgba(37,99,235,.18);
+      border-right: 2px solid rgba(37,99,235,.16);
+      border-bottom: 2px dashed rgba(20,184,198,.22);
+      border-radius: 0 34px 34px 0;
+      opacity: .9;
+    }
+    .scan-folder {
+      right: 4.6%;
+      width: 108px;
+      height: 68px;
+      border: 1px solid rgba(37,99,235,.20);
+      border-radius: 12px;
+      background: linear-gradient(135deg, rgba(255,255,255,.72), rgba(234,241,255,.48));
+      box-shadow: 0 16px 40px rgba(26,39,68,.08);
+    }
+    .scan-folder::before {
+      content: "";
+      position: absolute;
+      left: 20px;
+      top: 24px;
+      width: 48px;
+      height: 30px;
+      border-radius: 5px;
+      background: linear-gradient(135deg, #2563eb, #14b8c6);
+      box-shadow: inset 0 10px rgba(255,255,255,.22);
+    }
+    .scan-folder::after {
+      content: "";
+      position: absolute;
+      left: 20px;
+      top: 18px;
+      width: 28px;
+      height: 12px;
+      border-radius: 5px 5px 0 0;
+      background: #60a5fa;
+    }
+    .scan-folder.a { top: 22%; }
+    .scan-folder.b { top: 47%; opacity: .9; }
+    .scan-folder.c { top: 72%; opacity: .78; }
+    @keyframes scannerSweep {
+      0%, 100% { transform: translateY(-92px); opacity: .14; }
+      22%, 68% { opacity: 1; }
+      50% { transform: translateY(155px); }
+    }
     .hero-grid { display: grid; grid-template-columns: 1.03fr .97fr; align-items: center; gap: 54px; }
     .eyebrow {
       display: inline-flex;
@@ -665,6 +781,9 @@
       .cursor-pixel-shard {
         display: none;
       }
+      .scan-hero-bg::before {
+        animation: none;
+      }
     }
     @media (max-width: 620px) {
       .demo-modal { padding: 10px; }
@@ -772,6 +891,15 @@
 
   <main id="top">
     <section class="hero">
+      <div class="scan-hero-bg" aria-hidden="true">
+        <span class="scan-doc one"></span>
+        <span class="scan-doc two"></span>
+        <span class="scan-doc three"></span>
+        <span class="scan-route"></span>
+        <span class="scan-folder a"></span>
+        <span class="scan-folder b"></span>
+        <span class="scan-folder c"></span>
+      </div>
       <div class="hero-mouse-glow" aria-hidden="true"></div>
       <div class="container hero-grid">
         <div>

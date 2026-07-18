@@ -196,7 +196,17 @@
     .button-secondary:hover { color: var(--blue); border-color: var(--blue); }
     .breadcrumb { padding-top: 24px; color: #6d7b90; font-size: 13px; font-weight: 700; }
     .breadcrumb a { color: var(--blue); }
-    .hero { padding: 52px 0 70px; overflow: hidden; }
+    .hero {
+      position: relative;
+      overflow: hidden;
+      padding: 52px 0 70px;
+      --glow-x: 72%;
+      --glow-y: 34%;
+    }
+    .hero > .container {
+      position: relative;
+      z-index: 1;
+    }
     .hero-grid { display: grid; grid-template-columns: 1.02fr .98fr; align-items: center; gap: 56px; }
     .eyebrow {
       display: inline-flex;
@@ -477,6 +487,115 @@
     .form-status.error { color: #b42318; }
     .honeypot { position: absolute !important; left: -9999px !important; width: 1px !important; height: 1px !important; opacity: 0 !important; pointer-events: none !important; }
     body.modal-open { overflow: hidden; }
+
+    .hero-mouse-glow {
+      position: absolute;
+      left: var(--glow-x);
+      top: var(--glow-y);
+      width: 1px;
+      height: 1px;
+      pointer-events: none;
+      transform: translate(-50%, -50%);
+      background:
+        linear-gradient(90deg, rgba(247, 250, 253, 0.54) 1px, transparent 1px),
+        linear-gradient(0deg, rgba(247, 250, 253, 0.54) 1px, transparent 1px),
+        repeating-conic-gradient(
+          from 0deg,
+          rgba(96, 165, 250, 0.22) 0 50%,
+          rgba(217, 70, 239, 0.18) 0 64%,
+          rgba(249, 115, 22, 0.16) 0 76%,
+          rgba(20, 184, 198, 0.16) 0 88%,
+          rgba(255, 255, 255, 0.28) 0 100%
+        );
+      background-size: 6px 6px, 6px 6px, 12px 12px;
+      backdrop-filter: blur(4px) contrast(1.65) saturate(0.72);
+      -webkit-backdrop-filter: blur(4px) contrast(1.65) saturate(0.72);
+      clip-path: polygon(12px 0, calc(100% - 24px) 0, calc(100% - 24px) 12px, 100% 12px, 100% calc(100% - 36px), calc(100% - 12px) calc(100% - 36px), calc(100% - 12px) 100%, 36px 100%, 36px calc(100% - 12px), 0 calc(100% - 12px), 0 24px, 12px 24px);
+      image-rendering: pixelated;
+      mix-blend-mode: multiply;
+      opacity: 0;
+      transition: left 45ms steps(2, end), top 45ms steps(2, end);
+      z-index: 2;
+    }
+    .hero-mouse-glow::before,
+    .hero-mouse-glow::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background:
+        linear-gradient(90deg, transparent 0 38%, rgba(255, 255, 255, 0.5) 38% 49%, transparent 49%),
+        linear-gradient(0deg, transparent 0 32%, rgba(96, 165, 250, 0.20) 32% 43%, transparent 43%);
+      background-size: 24px 24px;
+    }
+    .hero-mouse-glow::after {
+      inset: 12px;
+      background:
+        repeating-linear-gradient(
+          90deg,
+          rgba(96, 165, 250, 0.22) 0 6px,
+          rgba(217, 70, 239, 0.16) 6px 12px,
+          rgba(249, 115, 22, 0.15) 12px 18px,
+          rgba(20, 184, 198, 0.14) 18px 24px,
+          transparent 24px 30px
+        );
+      opacity: 0.5;
+    }
+    .cursor-pixel-shard {
+      position: absolute;
+      left: var(--pixel-x);
+      top: var(--pixel-y);
+      z-index: 3;
+      width: var(--pixel-size);
+      height: var(--pixel-size);
+      pointer-events: none;
+      background:
+        linear-gradient(135deg, rgba(255, 255, 255, 0.48), rgba(96, 165, 250, 0.38)),
+        rgba(247, 250, 253, 0.7);
+      box-shadow:
+        -6px 0 0 rgba(20, 184, 198, 0.14),
+        7px 7px 0 rgba(96, 165, 250, 0.24),
+        0 -7px 0 rgba(217, 70, 239, 0.14),
+        8px -4px 0 rgba(249, 115, 22, 0.13);
+      contain: layout paint;
+      image-rendering: pixelated;
+      mix-blend-mode: multiply;
+      transform: translate3d(-50%, -50%, 0);
+      will-change: transform, opacity;
+      animation: cursorPixelScatter 540ms steps(6, end) forwards;
+    }
+    .cursor-pixel-shard:nth-child(3n) {
+      background:
+        linear-gradient(135deg, rgba(96, 165, 250, 0.42), rgba(255, 255, 255, 0.50)),
+        rgba(247, 250, 253, 0.7);
+    }
+    .cursor-pixel-shard:nth-child(4n) {
+      background:
+        linear-gradient(135deg, rgba(20, 184, 198, 0.24), rgba(255, 255, 255, 0.62)),
+        rgba(247, 250, 253, 0.7);
+    }
+    .cursor-pixel-shard:nth-child(5n) {
+      background:
+        linear-gradient(135deg, rgba(217, 70, 239, 0.26), rgba(255, 255, 255, 0.62)),
+        rgba(247, 250, 253, 0.7);
+    }
+    .cursor-pixel-shard:nth-child(6n) {
+      background:
+        linear-gradient(135deg, rgba(249, 115, 22, 0.25), rgba(255, 255, 255, 0.62)),
+        rgba(247, 250, 253, 0.7);
+    }
+    @keyframes cursorPixelScatter {
+      0% { opacity: 0; transform: translate3d(-50%, -50%, 0) scale(0.7); }
+      12% { opacity: 0.72; }
+      38% { transform: translate3d(calc(-50% + var(--pixel-mid-x)), calc(-50% + var(--pixel-mid-y)), 0) scale(1.15); }
+      72% { opacity: 0.54; transform: translate3d(calc(-50% + var(--pixel-end-x)), calc(-50% + var(--pixel-end-y)), 0) scale(0.95); }
+      100% { opacity: 0; transform: translate3d(calc(-50% + var(--pixel-fade-x)), calc(-50% + var(--pixel-fade-y)), 0) scale(0.55); }
+    }
+    @media (prefers-reduced-motion: reduce) {
+      .hero-mouse-glow,
+      .cursor-pixel-shard {
+        display: none;
+      }
+    }
     @media (max-width: 960px) {
       .hero-grid, .difference-grid, .security-panel { grid-template-columns: 1fr; }
       .features { grid-template-columns: repeat(2, 1fr); }
@@ -533,6 +652,7 @@
     <div class="container breadcrumb" aria-label="Breadcrumb"><a href="../">Home</a> / Paperwork & PDF Splitter Software</div>
 
     <section class="hero">
+      <div class="hero-mouse-glow" aria-hidden="true"></div>
       <div class="container hero-grid">
         <div>
           <span class="eyebrow">Paperwork and PDF splitter software for Windows</span>
@@ -813,9 +933,7 @@
         </div>
         <button class="demo-close" type="button" aria-label="Close demo request form">&times;</button>
       </div>
-      <form class="demo-form" id="demoRequestForm" action="https://formsubmit.co/ajax/steve@stevethibault.com" method="POST">
-        <input type="hidden" name="_subject" value="New filepackR PDF Splitter Demo Request" />
-        <input type="hidden" name="_template" value="table" />
+      <form class="demo-form" id="demoRequestForm">
         <input type="hidden" name="Page source" id="demoSource" value="PDF Splitter Software page" />
         <input class="honeypot" type="text" name="_honey" tabindex="-1" autocomplete="off" aria-hidden="true" />
         <div class="form-grid">
@@ -853,7 +971,6 @@
       const toggle = document.getElementById("detailsToggle");
       const optionalDetails = document.getElementById("optionalDetails");
       const status = document.getElementById("formStatus");
-      const submitButton = document.getElementById("submitDemoRequest");
 
       const openModal = (source) => {
         sourceInput.value = source || "PDF Splitter Software page";
@@ -886,37 +1003,115 @@
         toggle.innerHTML = isOpen ? "<span>+</span> Add more details" : "<span>-</span> Hide additional details";
       });
 
-      form.addEventListener("submit", async (event) => {
+      document.querySelectorAll('a[href^="mailto:steve@stevethibault.com"]').forEach((link) => {
+        link.addEventListener("click", (event) => {
+          event.preventDefault();
+          openModal("Contact link");
+        });
+      });
+
+      form.addEventListener("submit", (event) => {
         event.preventDefault();
         if (!form.reportValidity()) return;
-        submitButton.disabled = true;
-        submitButton.textContent = "Sending...";
         status.textContent = "";
         status.className = "form-status";
-        try {
-          const response = await fetch(form.action, {
-            method: "POST",
-            body: new FormData(form),
-            headers: { "Accept": "application/json" }
-          });
-          if (!response.ok) throw new Error("Submission failed");
-          window.trackFilepackREvent("demo_form_submit_success", { source: sourceInput.value || "pdf_splitter_page" });
-          status.textContent = "Thank you. Your demo request has been sent.";
-          status.className = "form-status success";
-          form.reset();
-          optionalDetails.hidden = true;
-          toggle.setAttribute("aria-expanded", "false");
-          toggle.innerHTML = "<span>+</span> Add more details";
-          setTimeout(closeModal, 1800);
-        } catch (error) {
-          window.trackFilepackREvent("demo_form_submit_error", { source: sourceInput.value || "pdf_splitter_page" });
-          status.textContent = "We could not send your request. Please try again or email steve@stevethibault.com.";
-          status.className = "form-status error";
-        } finally {
-          submitButton.disabled = false;
-          submitButton.textContent = "Submit demo request";
-        }
+
+        const data = new FormData(form);
+        const body = [
+          "Source: " + (sourceInput.value || "PDF Splitter Software page"),
+          "Name: " + [data.get("First name"), data.get("Last name")].filter(Boolean).join(" "),
+          "Email: " + (data.get("email") || ""),
+          data.get("Phone number") ? "Phone: " + data.get("Phone number") : "",
+          "Business or organization: " + (data.get("Business or organization") || ""),
+          data.get("Business type") ? "Business type: " + data.get("Business type") : "",
+          data.get("Approximate monthly paper stack volume") ? "Paper stacks per month: " + data.get("Approximate monthly paper stack volume") : "",
+          data.get("Biggest challenge") ? "Biggest challenge: " + data.get("Biggest challenge") : "",
+          "",
+          "Workflow needs:",
+          data.get("Description of needs") || ""
+        ].filter(Boolean).join("\n");
+
+        window.trackFilepackREvent("demo_form_mailto_open", { source: sourceInput.value || "pdf_splitter_page" });
+        window.location.href = "mailto:steve@stevethibault.com?subject=" +
+          encodeURIComponent("filepackR inquiry from filepackr.com") +
+          "&body=" + encodeURIComponent(body);
+
+        status.textContent = "Your email app should open with this request filled in.";
+        status.className = "form-status success";
+        form.reset();
+        optionalDetails.hidden = true;
+        toggle.setAttribute("aria-expanded", "false");
+        toggle.innerHTML = "<span>+</span> Add more details";
       });
+    })();
+  </script>
+
+  <script>
+    (function () {
+      const hero = document.querySelector(".hero");
+      const glow = document.querySelector(".hero-mouse-glow");
+      let lastX = null;
+      let lastY = null;
+      let lastShardTime = 0;
+      const activeShards = [];
+      const reducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+      function spawnPixelShards(host, x, y, dx, dy, count) {
+        for (let index = 0; index < count; index += 1) {
+          const shard = document.createElement("span");
+          const size = 5 + Math.round(Math.random() * 11);
+          const scatterX = (Math.random() - 0.5) * 66;
+          const scatterY = (Math.random() - 0.5) * 66;
+          const driftX = dx * 0.85 + scatterX;
+          const driftY = dy * 0.85 + scatterY;
+
+          shard.className = "cursor-pixel-shard";
+          shard.style.setProperty("--pixel-x", (x + (Math.random() - 0.5) * 18) + "px");
+          shard.style.setProperty("--pixel-y", (y + (Math.random() - 0.5) * 18) + "px");
+          shard.style.setProperty("--pixel-size", size + "px");
+          shard.style.setProperty("--pixel-mid-x", (driftX * 0.45) + "px");
+          shard.style.setProperty("--pixel-mid-y", (driftY * 0.45) + "px");
+          shard.style.setProperty("--pixel-end-x", driftX + "px");
+          shard.style.setProperty("--pixel-end-y", driftY + "px");
+          shard.style.setProperty("--pixel-fade-x", (driftX * 1.35) + "px");
+          shard.style.setProperty("--pixel-fade-y", (driftY * 1.35) + "px");
+
+          host.appendChild(shard);
+          activeShards.push(shard);
+          if (activeShards.length > 180) {
+            const oldShard = activeShards.shift();
+            if (oldShard) oldShard.remove();
+          }
+          window.setTimeout(function () {
+            shard.remove();
+            const shardIndex = activeShards.indexOf(shard);
+            if (shardIndex > -1) activeShards.splice(shardIndex, 1);
+          }, 620);
+        }
+      }
+
+      if (hero && glow && !reducedMotion) {
+        hero.addEventListener("pointermove", function (event) {
+          const rect = hero.getBoundingClientRect();
+          const x = event.clientX - rect.left;
+          const y = event.clientY - rect.top;
+          const dx = lastX === null ? 0 : x - lastX;
+          const dy = lastY === null ? 0 : y - lastY;
+
+          hero.style.setProperty("--glow-x", x + "px");
+          hero.style.setProperty("--glow-y", y + "px");
+
+          const now = performance.now();
+          if (now - lastShardTime > 16) {
+            const speed = Math.abs(dx) + Math.abs(dy);
+            spawnPixelShards(hero, x, y, dx, dy, speed > 18 ? 7 : 4);
+            lastShardTime = now;
+          }
+
+          lastX = x;
+          lastY = y;
+        }, { passive: true });
+      }
     })();
   </script>
 </body>

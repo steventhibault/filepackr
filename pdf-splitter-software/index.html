@@ -482,6 +482,7 @@
     .optional-details[hidden] { display: none; }
     .form-actions { display: flex; align-items: center; justify-content: space-between; gap: 14px; flex-wrap: wrap; padding-top: 3px; }
     .form-note { margin: 0; color: #738198; font-size: 12px; }
+    .form-note a { color: var(--blue); font-weight: 800; text-decoration: underline; text-underline-offset: 2px; }
     .form-status { min-height: 20px; margin: 0; font-size: 13px; font-weight: 750; }
     .form-status.success { color: var(--teal); }
     .form-status.error { color: #b42318; }
@@ -954,7 +955,7 @@
         </div>
         <p class="form-status" id="formStatus" aria-live="polite"></p>
         <div class="form-actions">
-          <p class="form-note">Your information will only be used to respond to your inquiry.</p>
+          <p class="form-note">Your information will only be used to respond to your inquiry. If your email app does not open, email <a class="direct-email" href="mailto:steve@stevethibault.com?subject=filepackR%20inquiry">steve@stevethibault.com</a>.</p>
           <button class="button button-primary" id="submitDemoRequest" type="submit">Submit demo request</button>
         </div>
       </form>
@@ -1004,6 +1005,7 @@
       });
 
       document.querySelectorAll('a[href^="mailto:steve@stevethibault.com"]').forEach((link) => {
+        if (link.classList.contains("direct-email")) return;
         link.addEventListener("click", (event) => {
           event.preventDefault();
           openModal("Contact link");
